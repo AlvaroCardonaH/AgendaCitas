@@ -23,18 +23,55 @@
                 )); 
                 
                 ?>
-                <div class=" navbar-right">
-                       <?php $this->widget('zii.widgets.CMenu', array(
-                    'encodeLabel' => true,
-                    'items' => array(
-						array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-						array('label'=>'Salir ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
-						
-                    ),
+                <?php if (app()->user->isGuest): ?>
+                    <?php
+                    $model = new LoginForm();
+                    $form = $this->beginWidget('CActiveForm', array(
+                        'id' => 'nav-bar_login-form',
+                        'enableClientValidation' => true,
+                        'action' => $this->createUrl('site/login'),
+                        //'enableAjaxValidation'=>true,
+                        'errorMessageCssClass' => 'has-error',
+                        'htmlOptions' => array(
+                            'id' => 'login-form',
+                            'class' => 'navbar-form navbar-right',
+                            'role' => 'form',
+                        ),
+                        'clientOptions' => array(
+                            'id' => 'nav-bar_login-form',
+                            'validateOnSubmit' => true,
+                            'errorCssClass' => 'has-error',
+                            'successCssClass' => 'has-success',
+                            'inputContainer' => '.form-group',
+                            'validateOnChange' => true
+                        ),
+                    ));
+                    ?>
+                    <form>
+                        <div class="form-group">
+                            <?php echo $form->textField($model, 'username', array('max-length' => '10', 'class' => 'form-control', 'placeholder' => 'email or username')); ?>
+                        </div>
+                        <div class="form-group">
+                            <?php echo $form->passwordField($model, 'password', array('max-length' => '10', 'class' => 'form-control', 'type' => 'password', 'placeholder' => 'password')); ?>
+                        </div>
+
+                        <?php echo CHtml::submitButton('Login', array('class' => 'btn btn-primary btn-sm')); ?>
+                        <a class="btn btn-primary  btn-sm  btn-warning"
+                           href="<?php echo $this->createUrl('site/email_for_reset') ?>">Forgot!</a>
                     
-                    'htmlOptions' => array('class' => 'nav navbar-nav')
-                )); ?>
-				</div>
+
+                        <?php $this->endWidget(); ?>
+                    </form>
+
+                <?php else: ?>
+                    <div class=" navbar-right">
+                        <span class="navbar-brand"><small>Welcome,<?php echo app()->user->name; ?></small></span>
+                            <span class="navbar-brand">
+                                <a class="navbar-right" href="<?php echo $this->createUrl('site/logout') ?>">
+                                    <small>Logout</small>
+                                </a></span>
+                    </div>
+                <?php endif;?>
             </div>
             <!--/.navbar-collapse -->
         </div>
