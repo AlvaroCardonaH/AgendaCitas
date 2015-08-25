@@ -113,8 +113,9 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
             ),    
             array(  // muestra una columna con los botones "view", "update" y "delete"
                 'class'=>'CButtonColumn',
+                'deleteConfirmation'=>'Desea cancelar esta cita',
                 'htmlOptions'=>array('width'=>'150'),
-                'template'=>'{update}{reprogramar}{cancelar}',                
+                'template'=>'{update}{reprogramar}{delete}',                
                 'buttons'=>array(
                     'update'=>array(
                         'label'=>'Confirmar Cita',
@@ -122,9 +123,10 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
                     ),     
                     'reprogramar'=>array(
                         'label'=>'Reprogramar Cita',
+                        'url'=>'Yii::app()->controller->createUrl("reprogramar",array("id"=>$data->IdNumeroSolicitud))',
                         'imageUrl'=>Yii::app()->request->baseUrl.'/img/AgendaCitasCedi/reprogramar_cita.jpg',
                     ),                         
-                    'cancelar'=>array(
+                    'delete'=>array(
                         'label'=>'Cancelar Cita',
                         'imageUrl'=>Yii::app()->request->baseUrl.'/img/AgendaCitasCedi/cancelar_cita.jpg',
                     ),     

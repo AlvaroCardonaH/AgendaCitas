@@ -146,6 +146,67 @@ class SolicitudCitaEntregaMercanciaController extends Controller
                     'modelmuelles'=>$modelmuelles,
 		));
 	}
+        
+        public function actionReprogramar($id)
+	{
+		//$model=$this->loadModel($id);                
+            
+                $modelagenda = new AgendaCitasCedi();
+            
+                $model= SolicitudCitaEntregaMercancia::model()->getSolicitudCita($id);
+                
+                $modelmuelles=new CActiveDataProvider(Muelles::model(), array(
+                            'keyAttribute'=>'IdMuelle',
+                            'criteria'=>array(
+                                'condition'=>'IdCedi='.$model->IdCedi,                            
+                            ),
+                            'sort'=>array(
+                                    'defaultOrder'=>'IdMuelle ASC',
+                            ),
+                ));   
+                
+                $modelagenda->FechaSolicitudCita = $model->FechaSolicitudCita;
+                $modelagenda->HoraSolicitudCita = $model->HoraSolicitudCita;
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['SolicitudCitaEntregaMercancia']))
+		{
+                    $model->attributes=$_POST['SolicitudCitaEntregaMercancia'];
+                    $model->IdEstadoSolicitudCita = 1;
+                        
+                    if($model->save()){
+                        
+                        $fecha=strftime( "%Y-%m-%d-%H-%M-%S", time() );
+                        $modelagenda->FechaGraba = $fecha;
+                        $modelagenda->FechaModifica = $fecha; 
+                        $modelagenda->IdUsuarioGraba = Yii::app()->user->id;
+                        $modelagenda->IdUsuarioModifica = Yii::app()->user->id; 
+                        
+                        $modelagenda->IdCedi = $model->IdCedi;
+                        $modelagenda->TituloEvento = $model->NombreFabricante . ' - ' .$model->IdOrdenCompra;
+                        
+                        $fechaaux = $modelagenda->FechaSolicitudCita . ' ' . $modelagenda->HoraSolicitudCita;
+                        
+                        $modelagenda->FechaInicio = $fechaaux;
+                        $modelagenda->FechaFinal = $fechaaux;
+
+                        if(isset($_POST['AgendaCitasCedi'])){
+                            $modelagenda->attributes=$_POST['AgendaCitasCedi'];
+                            if ($modelagenda->save()){
+                                $this->redirect(array('view','id'=>$model->IdNumeroSolicitud));
+                            }
+                        }                                        
+                    }        
+		}
+
+		$this->render('reprogramar',array(
+                    'model'=>$model,
+                    'modelagenda'=>$modelagenda,
+                    'modelmuelles'=>$modelmuelles,
+		));
+	}
 
 	/**
 	 * Deletes a particular model.
@@ -154,7 +215,10 @@ class SolicitudCitaEntregaMercanciaController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
+		//$this->loadModel($id)->delete();
+                $model=$this->loadModel($id);
+                $model->IdEstadoSolicitudCita = 3;
+                $model->save();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
@@ -190,6 +254,18 @@ class SolicitudCitaEntregaMercanciaController extends Controller
 			'model'=>$model,
 		));
 	}
+        
+       /* public function actionCancelar($id)
+        {
+            $model=new SolicitudCitaEntregaMercancia('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['SolicitudCitaEntregaMercancia']))
+			$model->attributes=$_GET['SolicitudCitaEntregaMercancia'];
+
+		$this->render('admin',array(
+			'model'=>$model,
+		));
+        }*/
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

@@ -2697,3 +2697,351 @@ Stack trace:
 #12 {main}
 REQUEST_URI=/AgendaCitas/AgendaCitasCedi/agendaCitasCedi
 ---
+2015/08/25 18:55:27 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('cancelar')
+#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('AgendaCitasCedi...')
+#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\AgendaCitas\index.php(43): CApplication->run()
+#12 {main}
+REQUEST_URI=/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/cancelar
+HTTP_REFERER=http://localhost:85/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/index
+---
+2015/08/25 20:32:51 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('reprogramar')
+#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('AgendaCitasCedi...')
+#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\AgendaCitas\index.php(43): CApplication->run()
+#12 {main}
+REQUEST_URI=/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/reprogramar
+HTTP_REFERER=http://localhost:85/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/index
+---
+2015/08/25 20:33:46 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('reprogramar')
+#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('AgendaCitasCedi...')
+#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\AgendaCitas\index.php(43): CApplication->run()
+#12 {main}
+REQUEST_URI=/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/reprogramar
+HTTP_REFERER=http://localhost:85/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/index
+---
+2015/08/25 20:33:52 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('AgendaCitasCedi...')
+#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\AgendaCitas\index.php(43): CApplication->run()
+#12 {main}
+REQUEST_URI=/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/update
+HTTP_REFERER=http://localhost:85/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/index
+---
+2015/08/25 20:34:08 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('AgendaCitasCedi...')
+#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\AgendaCitas\index.php(43): CApplication->run()
+#12 {main}
+REQUEST_URI=/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/update
+HTTP_REFERER=http://localhost:85/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/index
+---
+2015/08/25 20:34:17 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('AgendaCitasCedi...')
+#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\AgendaCitas\index.php(43): CApplication->run()
+#12 {main}
+REQUEST_URI=/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/update
+HTTP_REFERER=http://localhost:85/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/index
+---
+2015/08/25 20:34:22 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('reprogramar')
+#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('AgendaCitasCedi...')
+#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\AgendaCitas\index.php(43): CApplication->run()
+#12 {main}
+REQUEST_URI=/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/reprogramar
+HTTP_REFERER=http://localhost:85/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/index
+---
+2015/08/25 20:35:14 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('reprogramar')
+#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('AgendaCitasCedi...')
+#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\AgendaCitas\index.php(43): CApplication->run()
+#12 {main}
+REQUEST_URI=/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/reprogramar
+HTTP_REFERER=http://localhost:85/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/index
+---
+2015/08/25 20:35:15 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('reprogramar')
+#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('AgendaCitasCedi...')
+#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\AgendaCitas\index.php(43): CApplication->run()
+#12 {main}
+REQUEST_URI=/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/reprogramar
+HTTP_REFERER=http://localhost:85/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/index
+---
+2015/08/25 20:35:17 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('reprogramar')
+#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('AgendaCitasCedi...')
+#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\AgendaCitas\index.php(43): CApplication->run()
+#12 {main}
+REQUEST_URI=/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/reprogramar
+HTTP_REFERER=http://localhost:85/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/index
+---
+2015/08/25 20:35:20 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('reprogramar')
+#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('AgendaCitasCedi...')
+#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\AgendaCitas\index.php(43): CApplication->run()
+#12 {main}
+REQUEST_URI=/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/reprogramar
+HTTP_REFERER=http://localhost:85/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/index
+---
+2015/08/25 20:36:41 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('reprogramar')
+#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('AgendaCitasCedi...')
+#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\AgendaCitas\index.php(43): CApplication->run()
+#12 {main}
+REQUEST_URI=/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/reprogramar
+HTTP_REFERER=http://localhost:85/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/index
+---
+2015/08/25 20:36:42 [error] [php] Undefined variable: data (C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\views\solicitudCitaEntregaMercancia\index.php:126)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): SolicitudCitaEntregaMercanciaController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): SolicitudCitaEntregaMercanciaController->renderPartial()
+#2 C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\controllers\SolicitudCitaEntregaMercanciaController.php(240): SolicitudCitaEntregaMercanciaController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SolicitudCitaEntregaMercanciaController->actionIndex()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): SolicitudCitaEntregaMercanciaController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): SolicitudCitaEntregaMercanciaController->filterAccessControl()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): SolicitudCitaEntregaMercanciaController->runActionWithFilters()
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SolicitudCitaEntregaMercanciaController->run()
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\AgendaCitas\index.php(43): CWebApplication->run()
+REQUEST_URI=/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/index
+in C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\views\solicitudCitaEntregaMercancia\index.php (126)
+in C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\controllers\SolicitudCitaEntregaMercanciaController.php (240)
+in C:\xampp\htdocs\AgendaCitas\index.php (43)
+2015/08/25 20:36:44 [error] [php] Undefined variable: data (C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\views\solicitudCitaEntregaMercancia\index.php:126)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): SolicitudCitaEntregaMercanciaController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): SolicitudCitaEntregaMercanciaController->renderPartial()
+#2 C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\controllers\SolicitudCitaEntregaMercanciaController.php(240): SolicitudCitaEntregaMercanciaController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SolicitudCitaEntregaMercanciaController->actionIndex()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): SolicitudCitaEntregaMercanciaController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): SolicitudCitaEntregaMercanciaController->filterAccessControl()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): SolicitudCitaEntregaMercanciaController->runActionWithFilters()
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SolicitudCitaEntregaMercanciaController->run()
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\AgendaCitas\index.php(43): CWebApplication->run()
+REQUEST_URI=/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/index
+in C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\views\solicitudCitaEntregaMercancia\index.php (126)
+in C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\controllers\SolicitudCitaEntregaMercanciaController.php (240)
+in C:\xampp\htdocs\AgendaCitas\index.php (43)
+2015/08/25 20:36:47 [error] [php] Undefined variable: data (C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\views\solicitudCitaEntregaMercancia\index.php:126)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): SolicitudCitaEntregaMercanciaController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): SolicitudCitaEntregaMercanciaController->renderPartial()
+#2 C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\controllers\SolicitudCitaEntregaMercanciaController.php(240): SolicitudCitaEntregaMercanciaController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SolicitudCitaEntregaMercanciaController->actionIndex()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): SolicitudCitaEntregaMercanciaController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): SolicitudCitaEntregaMercanciaController->filterAccessControl()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): SolicitudCitaEntregaMercanciaController->runActionWithFilters()
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SolicitudCitaEntregaMercanciaController->run()
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\AgendaCitas\index.php(43): CWebApplication->run()
+REQUEST_URI=/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/index
+in C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\views\solicitudCitaEntregaMercancia\index.php (126)
+in C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\controllers\SolicitudCitaEntregaMercanciaController.php (240)
+in C:\xampp\htdocs\AgendaCitas\index.php (43)
+2015/08/25 20:39:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "reprogramar/id".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('reprogramar/id')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\AgendaCitas\index.php(43): CApplication->run()
+#3 {main}
+REQUEST_URI=/AgendaCitas/reprogramar/id/34
+HTTP_REFERER=http://localhost:85/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/index
+---
+2015/08/25 20:40:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "AgendaCitasCedi/reprogramar".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('AgendaCitasCedi...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\AgendaCitas\index.php(43): CApplication->run()
+#3 {main}
+REQUEST_URI=/AgendaCitas/AgendaCitasCedi/reprogramar/34
+HTTP_REFERER=http://localhost:85/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/index
+---
+2015/08/25 20:41:56 [error] [exception.CException] exception 'CException' with message 'Property "SolicitudCitaEntregaMercancia.id" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\views\solicitudCitaEntregaMercancia\index.php(126): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#6 C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\controllers\SolicitudCitaEntregaMercanciaController.php(240): CController->render('index', Array)
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SolicitudCitaEntregaMercanciaController->actionIndex()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('AgendaCitasCedi...')
+#18 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\AgendaCitas\index.php(43): CApplication->run()
+#20 {main}
+REQUEST_URI=/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/index
+HTTP_REFERER=http://localhost:85/AgendaCitas/AgendaCitasCedi
+---
+2015/08/25 20:44:11 [error] [php] Undefined variable: projectOID (C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\views\solicitudCitaEntregaMercancia\index.php:126)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): SolicitudCitaEntregaMercanciaController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): SolicitudCitaEntregaMercanciaController->renderPartial()
+#2 C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\controllers\SolicitudCitaEntregaMercanciaController.php(240): SolicitudCitaEntregaMercanciaController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SolicitudCitaEntregaMercanciaController->actionIndex()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): SolicitudCitaEntregaMercanciaController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): SolicitudCitaEntregaMercanciaController->filterAccessControl()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): SolicitudCitaEntregaMercanciaController->runActionWithFilters()
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SolicitudCitaEntregaMercanciaController->run()
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\AgendaCitas\index.php(43): CWebApplication->run()
+REQUEST_URI=/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/index?ajax=ordenescompra-grid
+in C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\views\solicitudCitaEntregaMercancia\index.php (126)
+in C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\controllers\SolicitudCitaEntregaMercanciaController.php (240)
+in C:\xampp\htdocs\AgendaCitas\index.php (43)
