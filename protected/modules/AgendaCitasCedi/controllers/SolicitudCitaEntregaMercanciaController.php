@@ -165,8 +165,8 @@ class SolicitudCitaEntregaMercanciaController extends Controller
                             ),
                 ));   
                 
-                $modelagenda->FechaSolicitudCita = $model->FechaSolicitudCita;
-                $modelagenda->HoraSolicitudCita = $model->HoraSolicitudCita;
+              //  $modelagenda->FechaSolicitudCita = $model->FechaSolicitudCita;
+                //$modelagenda->HoraSolicitudCita = $model->HoraSolicitudCita;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -187,10 +187,10 @@ class SolicitudCitaEntregaMercanciaController extends Controller
                         $modelagenda->IdCedi = $model->IdCedi;
                         $modelagenda->TituloEvento = $model->NombreFabricante . ' - ' .$model->IdOrdenCompra;
                         
-                        $fechaaux = $modelagenda->FechaSolicitudCita . ' ' . $modelagenda->HoraSolicitudCita;
+                        //$fechaaux = $modelagenda->FechaSolicitudCita . ' ' . $modelagenda->HoraSolicitudCita;
                         
-                        $modelagenda->FechaInicio = $fechaaux;
-                        $modelagenda->FechaFinal = $fechaaux;
+                        //$modelagenda->FechaInicio = $fechaaux;
+                        //$modelagenda->FechaFinal = $fechaaux;
 
                         if(isset($_POST['AgendaCitasCedi'])){
                             $modelagenda->attributes=$_POST['AgendaCitasCedi'];

@@ -176,6 +176,7 @@ $this->breadcrumbs = array(
                     <?php echo $form->labelEx($model, 'NumeroPiezas'); ?>
                     <?php echo $form->textField($model, 'NumeroPiezas', array('class' => 'form-control', 
                                                         'style'=>'text-align: right',
+                                                        'disabled'=>true,
                                                         'placeholder' => 'Número de Piezas')); ?>
                     <?php echo $form->error($model, 'NumeroPiezas'); ?>                
                 </div>
@@ -213,7 +214,7 @@ $this->breadcrumbs = array(
                 <div class="col-md-4">
                     <?php echo $form->labelEx($modelagenda, 'IdMuelle'); ?>
                     <?php echo $form->dropDownList($modelagenda, 'IdMuelle', $listamuelles, 
-                            array('class' => 'form-control',
+                            array('class' => 'form-control', 'disabled'=>true,
                                   'prompt'=>'Seleccionar Muelle ... ',
                             )
                         ); ?>
@@ -230,6 +231,7 @@ $this->breadcrumbs = array(
                                 'model'=>$modelagenda,
                                 'attribute'=>'FechaSolicitudCita',
                                 'value'=>$modelagenda->FechaSolicitudCita,
+                                
                                 //additional javascript options for the date picker plugin
                                 'options'=>array(
                                     'dateFormat'=>'yy-mm-dd',
@@ -241,6 +243,7 @@ $this->breadcrumbs = array(
                                             'changeYear'=>true),
                                 ),
                                 'htmlOptions'=>array(
+                                    
                                     'class' => 'form-control',
                                     //'style'=>'height:20px;'
                                 ),
@@ -280,7 +283,7 @@ $this->breadcrumbs = array(
                 <div class="col-md-12">
                     <?php echo $form->labelEx($modelagenda, 'ObservacionesEvento'); ?>
                     <?php echo $form->textArea($modelagenda, 'ObservacionesEvento', 
-                            array('class' => 'form-control','rows'=>2, 'cols'=>50)); ?>
+                            array('class' => 'form-control', 'disabled'=>true, 'rows'=>2, 'cols'=>50)); ?>
                     <?php echo $form->error($modelagenda, 'ObservacionesEvento'); ?> 
                 </div>    
             </div>

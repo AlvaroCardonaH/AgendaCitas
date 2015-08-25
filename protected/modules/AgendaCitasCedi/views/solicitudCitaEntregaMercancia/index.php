@@ -58,10 +58,10 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
                 'name' => 'IdNumeroSolicitud',
                 'htmlOptions'=>array('width'=>'50'),
             ),                            
-            array(
+           /* array(
                 'name' => 'IdOrdenCompra',
                 'htmlOptions'=>array('width'=>'50'),
-            ),                
+            ),*/                
             'IdFabricante'=>array(
                 'name' => 'IdFabricante',
                 'htmlOptions'=>array('width'=>'250'),
