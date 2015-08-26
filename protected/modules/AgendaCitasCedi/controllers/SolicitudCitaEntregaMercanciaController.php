@@ -91,6 +91,7 @@ class SolicitudCitaEntregaMercanciaController extends Controller
 		//$model=$this->loadModel($id);                
             
                 $modelagenda = new AgendaCitasCedi();
+                $modeldetalle= new SolicitudesCitaDetalle();
             
                 $model= SolicitudCitaEntregaMercancia::model()->getSolicitudCita($id);
                 
@@ -124,7 +125,8 @@ class SolicitudCitaEntregaMercanciaController extends Controller
                         $modelagenda->IdUsuarioModifica = Yii::app()->user->id; 
                         
                         $modelagenda->IdCedi = $model->IdCedi;
-                        $modelagenda->TituloEvento = $model->NombreFabricante . ' - ' .$model->IdOrdenCompra;
+                        $modelagenda->IdNumeroSolicitud = $model->IdNumeroSolicitud;
+                        $modelagenda->TituloEvento = $model->NombreFabricante . ' - ' .$model->IdNumeroSolicitud;
                         
                         $fechaaux = $modelagenda->FechaSolicitudCita . ' ' . $modelagenda->HoraSolicitudCita;
                         
