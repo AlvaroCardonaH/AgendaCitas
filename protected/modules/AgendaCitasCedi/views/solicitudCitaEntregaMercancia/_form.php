@@ -132,11 +132,11 @@ $this->breadcrumbs = array(
                         
             <div class='row'>    
                 <div class="col-md-2">
-                    <?php //echo $form->labelEx($model, 'IdOrdenCompra'); ?>
-                    <?php /*echo $form->textField($model, 'IdOrdenCompra', array('class' => 'form-control', 
+                    <?php echo $form->labelEx($model, 'IdOrdenCompra'); ?>
+                    <?php echo $form->textField($model, 'IdOrdenCompra', array('class' => 'form-control', 
                                                         'disabled'=>true,
-                                                        'placeholder' => '')); */?>
-                    <?php //echo $form->error($model, 'IdOrdenCompra'); ?>
+                                                        'placeholder' => '')); ?>
+                    <?php echo $form->error($model, 'IdOrdenCompra'); ?>
                 </div>    
 
                 <div class="col-md-3">
@@ -156,34 +156,28 @@ $this->breadcrumbs = array(
                 </div>    
 
                 <?php
-                   // $model->TotalOrdenCompraFormat = Yii::app()->format->formatNumber($model->TotalOrdenCompra);
+                    $model->TotalOrdenCompraFormat = Yii::app()->format->formatNumber($model->TotalOrdenCompra);
                 ?>        
                 
                 <div class="col-md-2">
-                    <?php //echo $form->labelEx($model, 'TotalOrdenCompraFormat'); ?>
-                    <?php /*echo $form->textField($model, 'TotalOrdenCompraFormat', array('class' => 'form-control',
+                    <?php echo $form->labelEx($model, 'TotalOrdenCompraFormat'); ?>
+                    <?php echo $form->textField($model, 'TotalOrdenCompraFormat', array('class' => 'form-control',
                                                         'style'=>'text-align: right',
                                                         'disabled'=>true,
-                                                        'placeholder' => ''));*/?>
-                    <?php //echo $form->error($model, 'TotalOrdenCompraFormat'); ?>                
+                                                        'placeholder' => '')); ?>
+                    <?php echo $form->error($model, 'TotalOrdenCompraFormat'); ?>                
                 </div>
 
                 <?php
-                    //$model->NumeroPiezasFormat = Yii::app()->format->formatNumber($model->NumeroPiezas);
+                    $model->NumeroPiezasFormat = Yii::app()->format->formatNumber($model->NumeroPiezas);
                 ?>        
                 
                 <div class="col-md-2">
-                    <?php //echo $form->labelEx($model, 'NumeroPiezas'); ?>
-                    <?php /*echo $form->textField($model, 'NumeroPiezas', array('class' => 'form-control', 
-                                                        'style'=>'text-align: right',
-                                                        'placeholder' => 'Número de Piezas'));*/ ?>
-                    <?php //echo $form->error($model, 'NumeroPiezas'); ?> 
-                    
                     <?php echo $form->labelEx($model, 'NumeroPiezas'); ?>
                     <?php echo $form->textField($model, 'NumeroPiezas', array('class' => 'form-control', 
                                                         'style'=>'text-align: right',
                                                         'placeholder' => 'Número de Piezas')); ?>
-                    <?php echo $form->error($model, 'NumeroPiezas'); ?>   
+                    <?php echo $form->error($model, 'NumeroPiezas'); ?>                
                 </div>
                 
                 

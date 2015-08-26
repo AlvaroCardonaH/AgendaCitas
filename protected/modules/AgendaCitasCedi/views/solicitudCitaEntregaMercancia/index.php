@@ -84,32 +84,20 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
                 'filter'=> CHtml::listData(Cedi::model()->findAll(array('order'=>'NombreCEDI')), 
                                                                         'IDCEDI', 'NombreCEDI')
             ),             
-            /*array(       
+            array(       
                 'name' => 'TotalOrdenCompra',
                 'htmlOptions'=>array('align'=>'right', 'width'=>'100'),
                 'value' => function ($model){
                         return Yii::app()->format->formatNumber($model->TotalOrdenCompra);
                 }
-            ), */
+            ), 
             array(       
-                'header' => 'Total Orden Compra',
-                'htmlOptions'=>array('align'=>'right', 'width'=>'100'),
-                'value' =>'$data->getTotalOrdenCompra($data->IdNumeroSolicitud)'
-                
-            ),        
-            /*array(       
                 'name' => 'NumeroPiezas',
                 'htmlOptions'=>array('align'=>'right', 'width'=>'100'),
                 'value' => function ($model){
                         return Yii::app()->format->formatNumber($model->NumeroPiezas);
                 }
-            ),*/
-            array(       
-                'header' => 'Numero Piezas',
-                'htmlOptions'=>array('align'=>'right', 'width'=>'100'),
-                'value' =>'$data->getTotalNumeroPiezas($data->IdNumeroSolicitud)'
-                
-            ),         
+            ), 
             'FechaSolicitudCita',                    
             array(        
                 'name' => 'HoraSolicitudCita',
