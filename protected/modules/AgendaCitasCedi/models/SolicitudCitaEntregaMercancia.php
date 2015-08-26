@@ -29,13 +29,13 @@ class SolicitudCitaEntregaMercancia extends CActiveRecord
 	 */
         public $NombreFabricante;
         public $NombreCEDI;
-        public $TotalOrdenCompraFormat;
-        public $NumeroPiezasFormat;
+       // public $TotalOrdenCompraFormat;
+       // public $NumeroPiezasFormat;
         public $IdMuelle;
         
 	public function tableName()
 	{
-		return 't_SolicitudCitaEntregaMercancia';
+		return 't_SolicitudesCita';
 	}
 
 	/**
@@ -46,16 +46,16 @@ class SolicitudCitaEntregaMercancia extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('IdFabricante, IdCedi, IdOrdenCompra, FechaSolicitudCita, HoraSolicitudCita, TotalOrdenCompra, NumeroPiezas', 'required'),
-			array('IdTransportador, IdFabricante, IdCedi, IdOrdenCompra, NumeroPiezas, IdEstadoSolicitudCita, IdConductor', 'numerical', 'integerOnly'=>true),
+			array('IdFabricante, IdCedi,  FechaSolicitudCita, HoraSolicitudCita', 'required'),
+			array('IdTransportador, IdFabricante, IdCedi,   IdEstadoSolicitudCita, IdConductor', 'numerical', 'integerOnly'=>true),
 			array('HoraSolicitudCita', 'length', 'max'=>10),
-			array('TotalOrdenCompra', 'length', 'max'=>15),
+			//array('TotalOrdenCompra', 'length', 'max'=>15),
 			array('ObservacionesSolicitudCita', 'length', 'max'=>255),
                         array('FechaSolicitudCita','validarFechaSolicitud'),
-			array('FechaRegistroOrdenCompra, FechaTentativaEntrega, FechaModifica', 'safe'),
+			array(' FechaModifica', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('IdNumeroSolicitud, IdTransportador, IdFabricante, IdCedi, IdOrdenCompra, FechaRegistroOrdenCompra, FechaTentativaEntrega, FechaSolicitudCita, HoraSolicitudCita, NumeroPiezas, TotalOrdenCompra, ObservacionesSolicitudCita, IdEstadoSolicitudCita, IdConductor', 'safe', 'on'=>'search'),
+			array('IdNumeroSolicitud, IdTransportador, IdFabricante, IdCedi, FechaSolicitudCita, HoraSolicitudCita, ObservacionesSolicitudCita, IdEstadoSolicitudCita, IdConductor', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -68,6 +68,7 @@ class SolicitudCitaEntregaMercancia extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
                     'estadosolicitud' => array(self::BELONGS_TO, 'EstadosSolicitudCita', 'IdEstadoSolicitudCita'),
+                    'detallesolicitudcita' => array(self::BELONGS_TO, 'SolicitudesCitaDetalle', 'IdNumeroSolicitud'),
                     'cedi' => array(self::BELONGS_TO, 'Cedi', 'IdCedi'),
                     'fabricante' => array(self::BELONGS_TO, 'Fabricante', 'IdFabricante'),                    
 		);
@@ -84,21 +85,21 @@ class SolicitudCitaEntregaMercancia extends CActiveRecord
 			'IdFabricante' => 'Fabricante',
 			'IdCedi' => 'Cedi',
                         'IdConductor' => 'Conductor',
-			'IdOrdenCompra' => 'Orden Compra',
-                        'TotalOrdenCompraFormat' => 'Total Orden Compra',
-                        'NumeroPiezasFormat' => 'Número Piezas',
-			'FechaRegistroOrdenCompra' => 'Fecha Registro Orden Compra',
-			'FechaTentativaEntrega' => 'Fecha Tentativa Entrega',
+			//'IdOrdenCompra' => 'Orden Compra',
+                        //'TotalOrdenCompraFormat' => 'Total Orden Compra',
+                        //'NumeroPiezasFormat' => 'Número Piezas',
+			//'FechaRegistroOrdenCompra' => 'Fecha Registro Orden Compra',
+			//'FechaTentativaEntrega' => 'Fecha Tentativa Entrega',
 			'FechaSolicitudCita' => 'Fecha Solicitud',
 			'HoraSolicitudCita' => 'Hora Solicitud',
-			'NumeroPiezas' => 'Numero Piezas',
-			'TotalOrdenCompra' => 'Total Orden Compra',
+			//'NumeroPiezas' => 'Numero Piezas',
+			//'TotalOrdenCompra' => 'Total Orden Compra',
 			'ObservacionesSolicitudCita' => 'Observaciones',
 			'IdEstadoSolicitudCita' => 'Estado',
-			'IdUsuarioGraba' => 'Id Usuario Graba',
+			//'IdUsuarioGraba' => 'Id Usuario Graba',
 			'FechaGraba' => 'Fecha Graba',
-			'IdUsuarioModifica' => 'Id Usuario Modifica',
-			'FechaModifica' => 'Fecha Modifica',
+			//'IdUsuarioModifica' => 'Id Usuario Modifica',
+			//'FechaModifica' => 'Fecha Modifica',
 		);
 	}
 
@@ -125,19 +126,19 @@ class SolicitudCitaEntregaMercancia extends CActiveRecord
 		$criteria->compare('IdFabricante',$this->IdFabricante);
 		$criteria->compare('IdCedi',$this->IdCedi);
                 $criteria->compare('IdConductor',$this->IdConductor);
-		$criteria->compare('IdOrdenCompra',$this->IdOrdenCompra);
-		$criteria->compare('FechaRegistroOrdenCompra',$this->FechaRegistroOrdenCompra,true);
-		$criteria->compare('FechaTentativaEntrega',$this->FechaTentativaEntrega,true);
+		//$criteria->compare('IdOrdenCompra',$this->IdOrdenCompra);
+		//$criteria->compare('FechaRegistroOrdenCompra',$this->FechaRegistroOrdenCompra,true);
+		//$criteria->compare('FechaTentativaEntrega',$this->FechaTentativaEntrega,true);
 		$criteria->compare('FechaSolicitudCita',$this->FechaSolicitudCita,true);
 		$criteria->compare('HoraSolicitudCita',$this->HoraSolicitudCita,true);
-		$criteria->compare('NumeroPiezas',$this->NumeroPiezas);
-		$criteria->compare('TotalOrdenCompra',$this->TotalOrdenCompra,true);
+		//$criteria->compare('NumeroPiezas',$this->NumeroPiezas);
+		//$criteria->compare('TotalOrdenCompra',$this->TotalOrdenCompra,true);
 		$criteria->compare('ObservacionesSolicitudCita',$this->ObservacionesSolicitudCita,true);
 		$criteria->compare('IdEstadoSolicitudCita',$this->IdEstadoSolicitudCita);
-		$criteria->compare('IdUsuarioGraba',$this->IdUsuarioGraba);
+		//$criteria->compare('IdUsuarioGraba',$this->IdUsuarioGraba);
 		$criteria->compare('FechaGraba',$this->FechaGraba,true);
-		$criteria->compare('IdUsuarioModifica',$this->IdUsuarioModifica);
-		$criteria->compare('FechaModifica',$this->FechaModifica,true);
+		//$criteria->compare('IdUsuarioModifica',$this->IdUsuarioModifica);
+		//$criteria->compare('FechaModifica',$this->FechaModifica,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -217,6 +218,36 @@ class SolicitudCitaEntregaMercancia extends CActiveRecord
             if ($elMensaje){
                 $this->addError('ObservacionesSolicitudCita', $elMensaje);
             }
+        }
+        
+        public function getTotalOrdenCompra($IdNumeroSolicitud)
+        {
+            
+            
+            $sql = "SELECT SUM(TotalOrdenCompra) 
+                    FROM t_solicitudescitadetalle
+                    WHERE IdNumeroSolicitud = $IdNumeroSolicitud
+                ";
+            
+            $TotalOrdenCompra = Yii::app()->db->createCommand($sql)->queryScalar();
+            
+              return  Yii::app()->format->formatNumber($TotalOrdenCompra);
+            
+        }
+        
+        public function getTotalNumeroPiezas($IdNumeroSolicitud)
+        {
+            
+            
+            $sql = "SELECT SUM(NumeroPiezas) 
+                    FROM t_solicitudescitadetalle
+                    WHERE IdNumeroSolicitud = $IdNumeroSolicitud
+                ";
+            
+            $TotalNumeroPiezas = Yii::app()->db->createCommand($sql)->queryScalar();
+            
+              return  Yii::app()->format->formatNumber($TotalNumeroPiezas);
+            
         }
         
 }
