@@ -134,14 +134,23 @@ class ConductorController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$model=new Conductor('search');
+            if (Yii::app()->user->checkAccess('AgendaCitasCedi_Conductor_Ver')) {
+			$model=new Conductor('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Conductor']))
 			$model->attributes=$_GET['Conductor'];
 
 		$this->render('index',array(
 			'model'=>$model,
-		));            
+		));  
+        } else {
+            $this->render('//site/error', array(
+                'code' => '101',
+                'message' => Yii::app()->params ['accessError']
+            ));
+        }
+
+		          
 	}
 
 	/**

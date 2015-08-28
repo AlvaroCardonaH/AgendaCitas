@@ -29,7 +29,7 @@ class SolicitudCitaEntregaMercancia extends CActiveRecord
 	 */
         public $NombreFabricante;
         public $NombreCEDI;
-       // public $TotalOrdenCompraFormat;
+        public $TotalOrdenCompra;
        // public $NumeroPiezasFormat;
         public $IdMuelle;
         
@@ -52,7 +52,7 @@ class SolicitudCitaEntregaMercancia extends CActiveRecord
 			//array('TotalOrdenCompra', 'length', 'max'=>15),
 			array('ObservacionesSolicitudCita', 'length', 'max'=>255),
                         array('FechaSolicitudCita','validarFechaSolicitud'),
-			array(' FechaModifica', 'safe'),
+			array('FechaModifica', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('IdNumeroSolicitud, IdTransportador, IdFabricante, IdCedi, FechaSolicitudCita, HoraSolicitudCita, ObservacionesSolicitudCita, IdEstadoSolicitudCita, IdConductor', 'safe', 'on'=>'search'),
@@ -86,7 +86,7 @@ class SolicitudCitaEntregaMercancia extends CActiveRecord
 			'IdCedi' => 'Cedi',
                         'IdConductor' => 'Conductor',
 			//'IdOrdenCompra' => 'Orden Compra',
-                        //'TotalOrdenCompraFormat' => 'Total Orden Compra',
+                        'TotalOrdenCompra' => 'Total Orden Compra',
                         //'NumeroPiezasFormat' => 'Número Piezas',
 			//'FechaRegistroOrdenCompra' => 'Fecha Registro Orden Compra',
 			//'FechaTentativaEntrega' => 'Fecha Tentativa Entrega',

@@ -23,10 +23,11 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
     <h1>Catálogo Motivos Bloqueo Fechas </h1>
 </div>
 
-<?php echo TbHtml::linkButton('Crear Registro', array('color' => TbHtml::BUTTON_COLOR_PRIMARY,
+<?php /*echo TbHtml::linkButton('Crear Registro', array('color' => TbHtml::BUTTON_COLOR_PRIMARY,
                                         'method' => 'post',
                                         'submit' => array ('motivosBloqueoFecha/create'),
-)); ?>     
+)); */?>   
+<?php $this->menu=$this->verPermisosMenuOperaciones();?>
 
 <br /><br />
 

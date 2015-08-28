@@ -91,8 +91,7 @@ class SolicitudCitaEntregaMercanciaController extends Controller
 		//$model=$this->loadModel($id);                
             
                 $modelagenda = new AgendaCitasCedi();
-                $modeldetalle= new SolicitudesCitaDetalle();
-            
+                         
                 $model= SolicitudCitaEntregaMercancia::model()->getSolicitudCita($id);
                 
                 $modelmuelles=new CActiveDataProvider(Muelles::model(), array(
@@ -146,6 +145,7 @@ class SolicitudCitaEntregaMercanciaController extends Controller
                     'model'=>$model,
                     'modelagenda'=>$modelagenda,
                     'modelmuelles'=>$modelmuelles,
+                   // 'modeldetalle'=>$modeldetalle,
 		));
 	}
         

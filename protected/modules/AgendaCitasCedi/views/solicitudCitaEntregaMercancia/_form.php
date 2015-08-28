@@ -131,15 +131,15 @@ $this->breadcrumbs = array(
             )); ?>
                         
             <div class='row'>    
-                <div class="col-md-2">
+                <!--<div class="col-md-2">
                     <?php //echo $form->labelEx($model, 'IdOrdenCompra'); ?>
                     <?php /*echo $form->textField($model, 'IdOrdenCompra', array('class' => 'form-control', 
                                                         'disabled'=>true,
                                                         'placeholder' => '')); */?>
                     <?php //echo $form->error($model, 'IdOrdenCompra'); ?>
-                </div>    
+                </div> --> 
 
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <?php echo $form->labelEx($model, 'NombreFabricante'); ?>
                     <?php echo $form->textField($model, 'NombreFabricante', array('class' => 'form-control', 
                                                         'disabled'=>true,
@@ -147,7 +147,7 @@ $this->breadcrumbs = array(
                     <?php echo $form->error($model, 'NombreFabricante'); ?>                
                 </div>    
                 
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <?php echo $form->labelEx($model, 'NombreCEDI'); ?>
                     <?php echo $form->textField($model, 'NombreCEDI', array('class' => 'form-control', 
                                                         'disabled'=>true,
@@ -156,31 +156,27 @@ $this->breadcrumbs = array(
                 </div>    
 
                 <?php
-                   // $model->TotalOrdenCompraFormat = Yii::app()->format->formatNumber($model->TotalOrdenCompra);
+                    $model->TotalOrdenCompra = Yii::app()->format->formatNumber($model->TotalOrdenCompra);
                 ?>        
                 
-                <div class="col-md-2">
-                    <?php //echo $form->labelEx($model, 'TotalOrdenCompraFormat'); ?>
-                    <?php /*echo $form->textField($model, 'TotalOrdenCompraFormat', array('class' => 'form-control',
+                <div class="col-md-3">
+                    <?php echo $form->labelEx($model, 'TotalOrdenCompra'); ?>
+                    <?php echo $form->textField($model, 'TotalOrdenCompra', array('class' => 'form-control',
                                                         'style'=>'text-align: right',
                                                         'disabled'=>true,
-                                                        'placeholder' => ''));*/?>
-                    <?php //echo $form->error($model, 'TotalOrdenCompraFormat'); ?>                
+                                                        'placeholder' => ''));?>
+                    <?php echo $form->error($model, 'TotalOrdenCompra'); ?>                
                 </div>
 
                 <?php
-                    //$model->NumeroPiezasFormat = Yii::app()->format->formatNumber($model->NumeroPiezas);
+                    $model->NumeroPiezas = Yii::app()->format->formatNumber($model->NumeroPiezas);
                 ?>        
                 
-                <div class="col-md-2">
-                    <?php //echo $form->labelEx($model, 'NumeroPiezas'); ?>
-                    <?php /*echo $form->textField($model, 'NumeroPiezas', array('class' => 'form-control', 
-                                                        'style'=>'text-align: right',
-                                                        'placeholder' => 'Número de Piezas'));*/ ?>
-                    <?php //echo $form->error($model, 'NumeroPiezas'); ?> 
-                    
+                <div class="col-md-3">
+                   
                     <?php echo $form->labelEx($model, 'NumeroPiezas'); ?>
                     <?php echo $form->textField($model, 'NumeroPiezas', array('class' => 'form-control', 
+                                                        'disabled'=>true,
                                                         'style'=>'text-align: right',
                                                         'placeholder' => 'Número de Piezas')); ?>
                     <?php echo $form->error($model, 'NumeroPiezas'); ?>   
@@ -292,6 +288,61 @@ $this->breadcrumbs = array(
             </div>
                             
             <br/>
+            <div class="colorBox">
+                <p>Detalle Solicitud</p>
+            </div>
+            
+            
+            <?php 
+            $modeldetalle = new SolicitudesCitaDetalle('search'); 
+            $modeldetalle->unsetAttributes(); // clear any default values
+            
+            //$ValorOrdenCompra = Yii::app()->format->formatNumber($modeldetalle->TotalOrdenCompra);
+            
+            $this->widget('zii.widgets.grid.CGridView', array(
+                    'id'=>'detalle-grid',
+                    'dataProvider'=>$modeldetalle->search($model->IdNumeroSolicitud),   
+                    'summaryText' => "Mostrando {start} – {end} de {count} resultados",
+                    'pager'=>array(
+                        'header' => 'Ir a la pagina:',
+                        'firstPageLabel' => '< <',
+                        'prevPageLabel' => 'Anterior',
+                        'nextPageLabel' => 'Siguiente',
+                        'lastPageLabel' => '>>',
+                    ),    
+                    'htmlOptions'=>array('style'=>'word-wrap:break-word; width:1000px; font-family:"Times New Roman"'),
+                    'columns'=>array(
+                        array(
+                            'name' => 'IdSolicitudesCitaDetalle',
+                            'htmlOptions'=>array('width'=>'50'),
+                        ), 
+                        array(
+                            'name' => 'IdOrdenCompra',
+                            'htmlOptions'=>array('width'=>'50'),
+                        ),
+                        array(
+                            'header' => 'Valor Orden',
+                            'value' => '$data->TotalOrdenCompra',
+                            'htmlOptions'=>array('width'=>'50'),
+                        ),
+                        array(
+                            'name' => 'NumeroPiezas',
+                            'htmlOptions'=>array('width'=>'50'),
+                        ),
+                        array(
+                            'name' => 'FechaTentativaEntrega',
+                            'htmlOptions'=>array('width'=>'50'),
+                        ),
+                        array(
+                            'name' => 'FechaRegistroOrdenCompra',
+                            'htmlOptions'=>array('width'=>'50'),
+                        ),
+                              
+                        
+                    ),
+                )
+            );
+            ?>
             
             <div class="row">
                 <div class='col-md-3'>     
@@ -300,6 +351,8 @@ $this->breadcrumbs = array(
                 </div>
                 
             </div>    
+            
+            
                 
             <?php $this->endWidget(); ?>
             

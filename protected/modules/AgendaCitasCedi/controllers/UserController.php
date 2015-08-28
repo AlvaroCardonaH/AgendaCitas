@@ -1,6 +1,6 @@
 <?php
 
-class MotivosBloqueoFechaController extends Controller
+class UserController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -23,7 +23,7 @@ class MotivosBloqueoFechaController extends Controller
 	 * Specifies the access control rules.
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
-	 
+	 */
 	public function accessRules()
 	{
 		return array(
@@ -44,8 +44,6 @@ class MotivosBloqueoFechaController extends Controller
 			),
 		);
 	}
-         * 
-         */
 
 	/**
 	 * Displays a particular model.
@@ -64,37 +62,21 @@ class MotivosBloqueoFechaController extends Controller
 	 */
 	public function actionCreate()
 	{
-            
-                        if (Yii::app()->user->checkAccess('AgendaCitasCedi_MotivosBloqueoFecha_Crear')) {
-			$model=new MotivosBloqueoFecha;
+		$model=new User;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-                $fecha=strftime( "%Y-%m-%d-%H-%M-%S", time() );
-                $model->FechaGraba = $fecha;
-                $model->FechaModifica = $fecha; 
-                $model->IdUsuarioGraba = Yii::app()->user->id;
-                $model->IdUsuarioModifica = Yii::app()->user->id;
-                
-		if(isset($_POST['MotivosBloqueoFecha']))
+		if(isset($_POST['User']))
 		{
-			$model->attributes=$_POST['MotivosBloqueoFecha'];
+			$model->attributes=$_POST['User'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->IdMotivoBloqueo));
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
 		));
-        } else {
-            $this->render('//site/error', array(
-                'code' => '101',
-                'message' => Yii::app()->params ['accessError']
-            ));
-        }
-
-		
 	}
 
 	/**
@@ -109,15 +91,11 @@ class MotivosBloqueoFechaController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-                $fecha=strftime( "%Y-%m-%d-%H-%M-%S", time() );
-                $model->FechaModifica = $fecha; 
-                $model->IdUsuarioModifica = Yii::app()->user->id;
-                
-		if(isset($_POST['MotivosBloqueoFecha']))
+		if(isset($_POST['User']))
 		{
-			$model->attributes=$_POST['MotivosBloqueoFecha'];
+			$model->attributes=$_POST['User'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->IdMotivoBloqueo));
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('update',array(
@@ -136,7 +114,7 @@ class MotivosBloqueoFechaController extends Controller
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
 	/**
@@ -144,35 +122,25 @@ class MotivosBloqueoFechaController extends Controller
 	 */
 	public function actionIndex()
 	{
-            
-                if (Yii::app()->user->checkAccess('AgendaCitasCedi_MotivosBloqueoFecha_Ver')) {
-			$model=new MotivosBloqueoFecha('search');
+		$model=new User('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['MotivosBloqueoFecha']))
-			$model->attributes=$_GET['MotivosBloqueoFecha'];
+		if(isset($_GET['User']))
+			$model->attributes=$_GET['User'];
 
 		$this->render('index',array(
 			'model'=>$model,
-		));            
-
-        } else {
-            $this->render('//site/error', array(
-                'code' => '101',
-                'message' => Yii::app()->params ['accessError']
-            ));
-        }
-
-			}
+		));
+	}
 
 	/**
 	 * Manages all models.
 	 */
 	public function actionAdmin()
 	{
-		$model=new MotivosBloqueoFecha('search');
+		$model=new User('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['MotivosBloqueoFecha']))
-			$model->attributes=$_GET['MotivosBloqueoFecha'];
+		if(isset($_GET['User']))
+			$model->attributes=$_GET['User'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -183,24 +151,33 @@ class MotivosBloqueoFechaController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return MotivosBloqueoFecha the loaded model
+	 * @return User the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=MotivosBloqueoFecha::model()->findByPk($id);
+		$model=User::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
 	}
+        
+        public static function obtenerEstado($elEstado){
+            
+            if ($elEstado == 0) 
+                return 'INACTIVO';
+            else
+                return 'ACTIVO';
+            
+        }
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param MotivosBloqueoFecha $model the model to be validated
+	 * @param User $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='motivos-bloqueo-fecha-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='user-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

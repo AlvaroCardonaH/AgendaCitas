@@ -92,14 +92,14 @@ class SolicitudesCitaDetalle extends CActiveRecord
 	 * @return CActiveDataProvider the data provider that can return the models
 	 * based on the search/filter conditions.
 	 */
-	public function search()
+	public function search($IdNumeroSolicitud)
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('IdSolicitudesCitaDetalle',$this->IdSolicitudesCitaDetalle);
-		$criteria->compare('IdNumeroSolicitud',$this->IdNumeroSolicitud);
+		$criteria->compare('IdNumeroSolicitud',$this->IdNumeroSolicitud = $IdNumeroSolicitud);
 		$criteria->compare('IdOrdenCompra',$this->IdOrdenCompra);
 		$criteria->compare('TotalOrdenCompra',$this->TotalOrdenCompra,true);
 		$criteria->compare('NumeroPiezas',$this->NumeroPiezas);
