@@ -6,7 +6,7 @@ class MotivosBloqueoFechaController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='/layouts/column1';
+	//public $layout='/layouts/column1';
 
 	/**
 	 * @return array action filters
@@ -65,8 +65,9 @@ class MotivosBloqueoFechaController extends Controller
 	public function actionCreate()
 	{
             
-                        if (Yii::app()->user->checkAccess('AgendaCitasCedi_MotivosBloqueoFecha_Crear')) {
-			$model=new MotivosBloqueoFecha;
+           // if (Yii::app()->user->checkAccess('AgendaCitasCedi_MotivosBloqueoFecha_Crear')) 
+           // {
+                $model=new MotivosBloqueoFecha;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -87,12 +88,12 @@ class MotivosBloqueoFechaController extends Controller
 		$this->render('create',array(
 			'model'=>$model,
 		));
-        } else {
-            $this->render('//site/error', array(
-                'code' => '101',
-                'message' => Yii::app()->params ['accessError']
-            ));
-        }
+           /* } else {
+                $this->render('//site/error', array(
+                    'code' => '101',
+                    'message' => Yii::app()->params ['accessError']
+                ));
+            }*/
 
 		
 	}
@@ -145,8 +146,9 @@ class MotivosBloqueoFechaController extends Controller
 	public function actionIndex()
 	{
             
-                if (Yii::app()->user->checkAccess('AgendaCitasCedi_MotivosBloqueoFecha_Ver')) {
-			$model=new MotivosBloqueoFecha('search');
+                //if (Yii::app()->user->checkAccess('admin')) 
+                //{
+		$model=new MotivosBloqueoFecha('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['MotivosBloqueoFecha']))
 			$model->attributes=$_GET['MotivosBloqueoFecha'];
@@ -155,14 +157,14 @@ class MotivosBloqueoFechaController extends Controller
 			'model'=>$model,
 		));            
 
-        } else {
-            $this->render('//site/error', array(
+               /* } else {
+                $this->render('//site/error', array(
                 'code' => '101',
                 'message' => Yii::app()->params ['accessError']
-            ));
-        }
+                ));
+                }*/
 
-			}
+        }
 
 	/**
 	 * Manages all models.

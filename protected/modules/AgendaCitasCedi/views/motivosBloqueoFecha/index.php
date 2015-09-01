@@ -19,31 +19,24 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
 ));
 ?>
 
-<div class="page-header">
-    <h1>Catálogo Motivos Bloqueo Fechas </h1>
-</div>
+<div class="panel panel-primary">
+    <div class="panel-heading">        
+        <h3 class="panel-title">Motivos Bloqueo Fecha</h3>
+    </div>
+<div class=" panel-body">
+
 
 <?php /*echo TbHtml::linkButton('Crear Registro', array('color' => TbHtml::BUTTON_COLOR_PRIMARY,
                                         'method' => 'post',
                                         'submit' => array ('motivosBloqueoFecha/create'),
 )); */?>   
-<?php $this->menu=$this->verPermisosMenuOperaciones();?>
+<?php //$this->menu=$this->verPermisosMenuOperaciones();?>
 
-<br /><br />
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
         'id'=>'roles-grid',
 	'dataProvider'=>$model->search(),        
 	'filter'=>$model,
-        'summaryText' => "Mostrando {start} – {end} de {count} resultados",
-        'pager'=>array(
-            'header' => 'Ir a la pagina:',
-            'firstPageLabel' => '< <',
-            'prevPageLabel' => 'Anterior',
-            'nextPageLabel' => 'Siguiente',
-            'lastPageLabel' => '>>',
-        ),    
-        'htmlOptions'=>array('style'=>'word-wrap:break-word; width:800px; font-family:"Times New Roman"'),
         'columns'=>array(
             array(
                 'name' => 'IdMotivoBloqueo',
@@ -63,3 +56,6 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
             ),
         ),
 )); ?>
+
+    </div>
+</div>

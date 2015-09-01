@@ -55,6 +55,12 @@ return array(
 
     // application components
     'components' => array(
+	
+	'authManager'=>array(
+        'class'=>'CDbAuthManager',
+        'connectionID'=>'db',
+     
+    ),
         
 'session' => array(
         'autoStart'=>true,
@@ -63,6 +69,7 @@ return array(
         'user' => array(
             // enable cookie-based authentication
             'allowAutoLogin' => true,
+			
         ),
         //email
         'mailer' => array(
