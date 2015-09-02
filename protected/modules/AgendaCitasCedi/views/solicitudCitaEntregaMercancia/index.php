@@ -15,15 +15,14 @@
 /* @var $this SolicitudCitaEntregaMercanciaController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->pageTitle = 'Gestionar Solicitudes de Citas';
+
 
 $this->breadcrumbs=array(
 	'Gestionar Solicitudes de Citas',
 );
-
+//$this->menu=$this->verPermisosMenuOperaciones();
 ?>
 
-<title><?php echo Yii::app()->controller->module->getName() ." >> " . $this->pageTitle ?></title>
 
 <?php
 $this->widget('zii.widgets.CBreadcrumbs', array(
@@ -32,26 +31,19 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
 ));
 ?>
 
-<div class="colorBox">
-    <p>Solicitudes de Citas Para Entrega de Mercancia</p>
-</div>
 
-
+<div class="panel panel-primary">
+    <div class="panel-heading">        
+        <h3 class="panel-title">Solicitudes de Citas Para Entrega de Mercancia</h3>
+    </div>
+<div class=" panel-body">
 <?php   //zii.widgets.grid.CGridView
     $this->widget('application.extensions.LiveGridView.RefreshGridView', array(
         'id'=>'ordenescompra-grid',
         'updatingTime'=>6000, // 6 sec
 	'dataProvider'=>$model->search(),        
 	'filter'=>$model,
-        'summaryText' => "Mostrando {start} – {end} de {count} resultados",
-        'pager'=>array(
-            'header' => 'Ir a la pagina:',
-            'firstPageLabel' => '< <',
-            'prevPageLabel' => 'Anterior',
-            'nextPageLabel' => 'Siguiente',
-            'lastPageLabel' => '>>',
-        ),    
-        'htmlOptions'=>array('style'=>'word-wrap:break-word; width:1250px; font-family:"Times New Roman"'),
+        'htmlOptions'=>array('style'=>'word-wrap:break-word;"'),
         'rowCssClassExpression'=>'($data->IdEstadoSolicitudCita==0)?"especial":"normal"',
         'columns'=>array(
             array(

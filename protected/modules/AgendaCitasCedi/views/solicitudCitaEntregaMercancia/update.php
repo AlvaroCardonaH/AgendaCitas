@@ -2,17 +2,13 @@
 /* @var $this OrdenesCompraCitasCediController */
 /* @var $model OrdenesCompraCitasCedi */
 
-$this->pageTitle = 'Gestionar Solicitudes de Citas';
 $this->breadcrumbs=array(
 	'Gestionar Solicitudes de Citas'=>array('index'),
 	//$model->NumeroOrdenCompra=>array('view','id'=>$model->NumeroOrdenCompra),
-	'Actualizar Registro',
+	'Confirmar Solicitud',
 );
-
+//$this->menu=$this->verPermisosMenuOperaciones();
 ?>
-
-<title><?php echo Yii::app()->controller->module->getName() ." >> " . $this->pageTitle ?></title>
-
 
 <?php
 $this->widget('zii.widgets.CBreadcrumbs', array(

@@ -1,9 +1,8 @@
-<?php
-$this->pageTitle = Yii::app()->name . ' - Motivos Bloqueo Fecha';
-$this->breadcrumbs = array(
-    'Motivos Bloqueo Fecha',
-);
-?>
+<div class="panel panel-primary">
+    <div class="panel-heading">        
+        <h3 class="panel-title"><?php echo $model->isNewRecord ? 'Crear Motivo Bloqueo Fecha' : 'Actualizar Motivo Bloqueo Fecha' ?></h3>
+    </div>
+<div class=" panel-body">
 <div class="container">
     <?php if (Yii::app()->user->hasFlash('MotivosBloqueoFecha')): ?>
         <div class="alert alert-info  alert-dismissable">
@@ -11,9 +10,7 @@ $this->breadcrumbs = array(
             <strong><?php echo Yii::app()->user->getFlash('MotivosBloqueoFecha'); ?>rttrt</strong>
         </div>
     <?php else: ?>
-        <div class="page-header">
-            <h1>Catálogo Motivos Bloqueo Fecha</h1>
-        </div>
+       
     
         <div class="horizontal-form" >
 
@@ -86,4 +83,6 @@ $this->breadcrumbs = array(
                 
         </div><!-- form -->
     <?php endif;?>
+</div>
+</div>
 </div>

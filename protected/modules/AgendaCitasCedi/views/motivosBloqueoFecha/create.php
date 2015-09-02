@@ -2,16 +2,14 @@
 /* @var $this MotivosBloqueoFechaController */
 /* @var $model MotivosBloqueoFecha */
 
-$this->pageTitle = 'Crear Motivos Bloqueo Fecha';
-
 $this->breadcrumbs=array(
 	'Motivos Bloqueo Fecha'=>array('index'),
 	'Crear Registro',
 );
 
+//$this->menu=$this->verPermisosMenuOperaciones();
 ?>
 
-<title><?php echo Yii::app()->controller->module->getName() ." >> " . $this->pageTitle ?></title>
 
 <?php
 $this->widget('zii.widgets.CBreadcrumbs', array(

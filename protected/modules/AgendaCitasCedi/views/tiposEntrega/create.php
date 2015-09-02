@@ -2,7 +2,6 @@
 /* @var $this TiposEntregaController */
 /* @var $model TiposEntrega */
 
-$this->pageTitle = 'Crear Tipos Entrega';
 
 $this->breadcrumbs=array(
 	'Tipos Entrega'=>array('index'),
@@ -10,8 +9,6 @@ $this->breadcrumbs=array(
 );
 
 ?>
-
-<title><?php echo Yii::app()->controller->module->getName() ." >> " . $this->pageTitle ?></title>
 
 <?php
 $this->widget('zii.widgets.CBreadcrumbs', array(

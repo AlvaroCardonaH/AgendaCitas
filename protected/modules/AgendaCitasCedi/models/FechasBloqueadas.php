@@ -27,7 +27,7 @@ class FechasBloqueadas extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'm_FechasBloqueadas';
+		return 't_FechasBloqueadas';
 	}
 
 	/**

@@ -17,13 +17,28 @@
      
 </style>
 
+<?php
+$this->breadcrumbs=array(
+	'Gestionar Solicitudes de Citas'=>array('index'),
+	//$model->NumeroOrdenCompra=>array('view','id'=>$model->NumeroOrdenCompra),
+	'Reprogramar Solicitud',
+);
+//$this->menu=$this->verPermisosMenuOperaciones();
+?>
 
 <?php
-$this->pageTitle = Yii::app()->name . ' - Gestionar Solictudes de Citas';
-$this->breadcrumbs = array(
-    'Gestionar Solicitudes de Citas',
-);
+$this->widget('zii.widgets.CBreadcrumbs', array(
+    'links'=>$this->breadcrumbs,
+    'htmlOptions'=>array ('class'=>'breadcrumb'),
+));
+
 ?>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">        
+        <h3 class="panel-title">Reprogramar Solicitud de Cita</h3>
+    </div>
+<div class=" panel-body">
 <div class="container">
     <?php if (Yii::app()->user->hasFlash('SolicitudCitaEntregaMercancia')): ?>
         <div class="alert alert-info  alert-dismissable">

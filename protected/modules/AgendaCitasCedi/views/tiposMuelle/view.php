@@ -2,17 +2,15 @@
 /* @var $this TiposMuelleController */
 /* @var $model TiposMuelle */
 
-$this->pageTitle = 'Visualizar ID Tipo Muelle';
+
 
 $this->breadcrumbs=array(
 	'Tipos Muelle'=>array('index'),
 	$model->IdTipoMuelle=>array('view','id'=>$model->IdTipoMuelle),
-	$this->pageTitle,
+	
 );
-
+//$this->menu=$this->verPermisosMenuOperaciones();
 ?>
-
-<title><?php echo Yii::app()->controller->module->getName() ." >> " . $this->pageTitle ?></title>
 
 
 <?php
@@ -20,12 +18,13 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
     'links'=>$this->breadcrumbs,
     'htmlOptions'=>array ('class'=>'breadcrumb'),
 ));
-
 ?>
 
-<div class="page-header">
-    <h1>Catálogo Tipos Muelle</h1>
-</div>
+<div class="panel panel-primary">
+    <div class="panel-heading">        
+        <h3 class="panel-title">Ver Tipos Muelle</h3>
+    </div>
+<div class=" panel-body">
 
 
 <div class="tipos-muelle-view">
@@ -60,3 +59,5 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
     
     
 </div>
+    </div>
+    </div>

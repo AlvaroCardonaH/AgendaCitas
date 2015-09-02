@@ -7,6 +7,8 @@
 return array(
     'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
     'name' => 'Siicop',
+	'language'=>'es', // Este es el lenguaje en el que querés que muestre las cosas
+    'sourceLanguage'=>'en',
     //'theme'=>'bootstrap2',
     //Available layouts for Bootstrap v2.3.2 :starter,hero,fluid,carousel,justified-nav,marketing-narrow. (uncomment 'theme'=>'bootstrap2' to use these).
     // Available layouts for Bootstrap v3.0.0 :starter-template,offcanvas,carousel,justified-nav,jumbotron,jumbotron-narrow.

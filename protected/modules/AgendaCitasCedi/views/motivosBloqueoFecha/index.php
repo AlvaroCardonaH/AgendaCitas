@@ -19,14 +19,6 @@ $this->breadcrumbs=array(
 <div class=" panel-body">
 
 
-<?php 
-/*echo TbHtml::linkButton('Crear Registro', array('color' => TbHtml::BUTTON_COLOR_PRIMARY,
-                                        'method' => 'post',
-                                        'submit' => array ('motivosBloqueoFecha/create'),
-)); */
-?>   
-
-
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
         'id'=>'roles-grid',

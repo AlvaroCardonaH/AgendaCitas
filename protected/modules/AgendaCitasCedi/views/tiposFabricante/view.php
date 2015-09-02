@@ -2,17 +2,14 @@
 /* @var $this TiposFabricanteController */
 /* @var $model TiposFabricante */
 
-$this->pageTitle = 'Visualizar ID Tipo Fabricante';
 
 $this->breadcrumbs=array(
 	'Tipos Fabricante'=>array('index'),
 	$model->IdTipoFabricante=>array('view','id'=>$model->IdTipoFabricante),
-	$this->pageTitle,
+	
 );
-
+//$this->menu=$this->verPermisosMenuOperaciones();
 ?>
-
-<title><?php echo Yii::app()->controller->module->getName() ." >> " . $this->pageTitle ?></title>
 
 
 <?php
@@ -23,9 +20,11 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
 
 ?>
 
-<div class="page-header">
-    <h1>Catálogo Tipos Fabricante</h1>
-</div>
+<div class="panel panel-primary">
+    <div class="panel-heading">        
+        <h3 class="panel-title">Ver Tipo Fabricante</h3>
+    </div>
+<div class=" panel-body">
 
 
 <div class="tipos-muelle-view">
@@ -60,3 +59,5 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
     
     
 </div>
+</div>
+    </div>

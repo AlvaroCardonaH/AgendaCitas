@@ -2,7 +2,7 @@
 /* @var $this ConfiguracionEntregasProveedorCediController */
 /* @var $model ConfiguracionEntregasProveedorCedi */
 
-$this->pageTitle = 'Fechas Bloqueadas';
+
 
 $this->breadcrumbs=array(
 	'Fechas Bloqueadas'=>array('index'),
@@ -10,8 +10,6 @@ $this->breadcrumbs=array(
 );
 
 ?>
-
-<title><?php echo Yii::app()->controller->module->getName() ." >> " . $this->pageTitle ?></title>
 
 <?php
 $this->widget('zii.widgets.CBreadcrumbs', array(

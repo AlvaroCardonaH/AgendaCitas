@@ -1,11 +1,8 @@
-<link rel="stylesheet" href="/css/styleFormulariosAgendaCitas.css" type="text/css" media="all">
-
-<?php
-$this->pageTitle = Yii::app()->name . ' - Muelles';
-$this->breadcrumbs = array(
-    'Muelles',
-);
-?>
+<div class="panel panel-primary">
+    <div class="panel-heading">        
+        <h3 class="panel-title"><?php echo $model->isNewRecord ? 'Crear Muelle' : 'Actualizar Muelle' ?></h3>
+    </div>
+<div class=" panel-body">
 <div class="container">
     <?php if (Yii::app()->user->hasFlash('Muelles')): ?>
         <div class="alert alert-info  alert-dismissable">
@@ -13,9 +10,7 @@ $this->breadcrumbs = array(
             <strong><?php echo Yii::app()->user->getFlash('Muelles'); ?>rttrt</strong>
         </div>
     <?php else: ?>
-        <div class="page-header">
-            <h1>Catálogo Muelles</h1>
-        </div>
+       
     
         <div class="horizontal-form" >
 
@@ -29,7 +24,7 @@ $this->breadcrumbs = array(
                 'htmlOptions' => array('class' => 'form-horizontal',
                     'role' => 'form',
                     'id' => 'muelles-form',
-                    'style'=>'word-wrap:break-word; width:1000px; font-family:"Times New Roman"',
+                    'style'=>'word-wrap:break-word; "',
                 ),
                 
                 'clientOptions' => array(

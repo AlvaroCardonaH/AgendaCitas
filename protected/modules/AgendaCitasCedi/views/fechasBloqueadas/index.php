@@ -2,15 +2,13 @@
 /* @var $this MuellesController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->pageTitle = 'Catálogo Fechas Bloqueadas';
 
 $this->breadcrumbs=array(
 	'Fechas Bloqueadas',
 );
-
+//$this->menu=$this->verPermisosMenuOperaciones();
 ?>
 
-<title><?php echo Yii::app()->controller->module->getName() ." >> " . $this->pageTitle ?></title>
 
 <?php
 $this->widget('zii.widgets.CBreadcrumbs', array(
@@ -19,30 +17,18 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
 ));
 ?>
 
-<div class="page-header">
-    <h1>Catálogo Fechas Bloqueadas</h1>
-</div>
+<div class="panel panel-primary">
+    <div class="panel-heading">        
+        <h3 class="panel-title">Fechas Bloqueadas</h3>
+    </div>
+<div class=" panel-body">
 
-<?php echo TbHtml::linkButton('Crear Registro', array('color' => TbHtml::BUTTON_COLOR_PRIMARY,
-                                        'method' => 'post',
-                                        'submit' => array ('fechasBloqueadas/create'),
-)); ?>     
-
-<br />
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
         'id'=>'fechasbloqueadas-grid',
 	'dataProvider'=>$model->search(),        
-	'filter'=>$model,
-        'summaryText' => "Mostrando {start} – {end} de {count} resultados",
-        'pager'=>array(
-            'header' => 'Ir a la pagina:',
-            'firstPageLabel' => '< <',
-            'prevPageLabel' => 'Anterior',
-            'nextPageLabel' => 'Siguiente',
-            'lastPageLabel' => '>>',
-        ),    
-        'htmlOptions'=>array('style'=>'word-wrap:break-word; width:1200px; font-family:"Times New Roman"'),
+	'filter'=>$model,    
+        'htmlOptions'=>array('style'=>'word-wrap:break-word;'),
         'columns'=>array(
             array(
                 'name' => 'IdFechaBloqueada',
@@ -96,3 +82,5 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
             ),
         ),
 )); ?>
+</div>
+</div>

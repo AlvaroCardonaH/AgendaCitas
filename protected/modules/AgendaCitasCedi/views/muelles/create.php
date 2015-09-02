@@ -2,16 +2,13 @@
 /* @var $this RolesController */
 /* @var $model Roles */
 
-$this->pageTitle = 'Crear Muelle';
 
 $this->breadcrumbs=array(
 	'Muelles'=>array('index'),
 	'Crear Registro',
 );
-
+//$this->menu=$this->verPermisosMenuOperaciones();
 ?>
-
-<title><?php echo Yii::app()->controller->module->getName() ." >> " . $this->pageTitle ?></title>
 
 <?php
 $this->widget('zii.widgets.CBreadcrumbs', array(

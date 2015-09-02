@@ -2,17 +2,14 @@
 /* @var $this FechasBloqueadasController */
 /* @var $model FechasBloqueadas */
 
-$this->pageTitle = 'Fechas Bloqueadas';
 $this->breadcrumbs=array(
 	'Fechas Bloqueadas'=>array('index'),
 	$model->IdFechaBloqueada=>array('view','id'=>$model->IdFechaBloqueada),
 	'Actualizar Registro',
 );
 
+//$this->menu=$this->verPermisosMenuOperaciones();
 ?>
-
-<title><?php echo Yii::app()->controller->module->getName() ." >> " . $this->pageTitle ?></title>
-
 
 <?php
 $this->widget('zii.widgets.CBreadcrumbs', array(

@@ -18,12 +18,12 @@
 </style>
 
 
-<?php
-$this->pageTitle = Yii::app()->name . ' - Gestionar Solictudes de Citas';
-$this->breadcrumbs = array(
-    'Gestionar Solicitudes de Citas',
-);
-?>
+<div class="panel panel-primary">
+    <div class="panel-heading">        
+        <h3 class="panel-title">Confirmar Solicitud de Cita</h3>
+    </div>
+<div class=" panel-body">
+
 <div class="container">
     <?php if (Yii::app()->user->hasFlash('SolicitudCitaEntregaMercancia')): ?>
         <div class="alert alert-info  alert-dismissable">
@@ -40,16 +40,8 @@ $this->breadcrumbs = array(
     
             <?php $this->widget('zii.widgets.grid.CGridView', array(
                     'id'=>'muelles-grid',
-                    'dataProvider'=>$modelmuelles,   
-                    'summaryText' => "Mostrando {start} – {end} de {count} resultados",
-                    'pager'=>array(
-                        'header' => 'Ir a la pagina:',
-                        'firstPageLabel' => '< <',
-                        'prevPageLabel' => 'Anterior',
-                        'nextPageLabel' => 'Siguiente',
-                        'lastPageLabel' => '>>',
-                    ),    
-                    'htmlOptions'=>array('style'=>'word-wrap:break-word; width:1000px; font-family:"Times New Roman"'),
+                    'dataProvider'=>$modelmuelles,
+                    'htmlOptions'=>array('style'=>'word-wrap:break-word;"'),
                     'columns'=>array(
                         array(
                             'name' => 'IdMuelle',
@@ -301,16 +293,8 @@ $this->breadcrumbs = array(
             
             $this->widget('zii.widgets.grid.CGridView', array(
                     'id'=>'detalle-grid',
-                    'dataProvider'=>$modeldetalle->search($model->IdNumeroSolicitud),   
-                    'summaryText' => "Mostrando {start} – {end} de {count} resultados",
-                    'pager'=>array(
-                        'header' => 'Ir a la pagina:',
-                        'firstPageLabel' => '< <',
-                        'prevPageLabel' => 'Anterior',
-                        'nextPageLabel' => 'Siguiente',
-                        'lastPageLabel' => '>>',
-                    ),    
-                    'htmlOptions'=>array('style'=>'word-wrap:break-word; width:1000px; font-family:"Times New Roman"'),
+                    'dataProvider'=>$modeldetalle->search($model->IdNumeroSolicitud),
+                    'htmlOptions'=>array('style'=>'word-wrap:break-word; width:1000px;"'),
                     'columns'=>array(
                         array(
                             'name' => 'IdSolicitudesCitaDetalle',
@@ -360,3 +344,5 @@ $this->breadcrumbs = array(
         </div><!-- form -->
     <?php endif;?>
 </div>
+    </div>
+    </div>

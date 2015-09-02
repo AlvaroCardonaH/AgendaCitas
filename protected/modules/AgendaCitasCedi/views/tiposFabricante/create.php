@@ -2,16 +2,16 @@
 /* @var $this TiposFabricanteController */
 /* @var $model TiposFabricante */
 
-$this->pageTitle = 'Crear Tipos Fabricante';
+
 
 $this->breadcrumbs=array(
 	'Tipos Fabricante'=>array('index'),
 	'Crear Registro',
 );
-
+//$this->menu=$this->verPermisosMenuOperaciones();
 ?>
 
-<title><?php echo Yii::app()->controller->module->getName() ." >> " . $this->pageTitle ?></title>
+
 
 <?php
 $this->widget('zii.widgets.CBreadcrumbs', array(

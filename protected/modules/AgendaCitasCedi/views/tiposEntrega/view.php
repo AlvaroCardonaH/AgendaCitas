@@ -2,17 +2,14 @@
 /* @var $this TiposEntregaController */
 /* @var $model TiposEntrega */
 
-$this->pageTitle = 'Visualizar ID Tipo Entrega';
 
 $this->breadcrumbs=array(
 	'Tipos Entrega'=>array('index'),
 	$model->IdTipoEntrega=>array('view','id'=>$model->IdTipoEntrega),
-	$this->pageTitle,
+	
 );
-
+//$this->menu=$this->verPermisosMenuOperaciones();
 ?>
-
-<title><?php echo Yii::app()->controller->module->getName() ." >> " . $this->pageTitle ?></title>
 
 
 <?php
@@ -23,9 +20,11 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
 
 ?>
 
-<div class="page-header">
-    <h1>Catálogo Tipos Entrega</h1>
-</div>
+<div class="panel panel-primary">
+    <div class="panel-heading">        
+        <h3 class="panel-title">Ver Tipos Entrega</h3>
+    </div>
+<div class=" panel-body">
 
 
 <div class="tipos-muelle-view">
@@ -60,3 +59,5 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
     
     
 </div>
+</div>
+    </div>

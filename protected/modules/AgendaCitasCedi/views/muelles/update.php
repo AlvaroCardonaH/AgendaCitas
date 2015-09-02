@@ -2,15 +2,13 @@
 /* @var $this MuellesController */
 /* @var $model Muelles */
 
-$this->pageTitle = 'Catálogo Muelles';
+
 $this->breadcrumbs=array(
 	'Catálogo Muelles'=>array('index'),
 	'Actualizar Registro',
 );
-
+//$this->menu=$this->verPermisosMenuOperaciones();
 ?>
-
-<title><?php echo Yii::app()->controller->module->getName() ." >> " . $this->pageTitle ?></title>
 
 <?php
 $this->widget('zii.widgets.CBreadcrumbs', array(

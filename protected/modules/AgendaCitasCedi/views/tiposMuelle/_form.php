@@ -1,9 +1,8 @@
-<?php
-$this->pageTitle = Yii::app()->name . ' - Tipos Muelle';
-$this->breadcrumbs = array(
-    'Tipos Muelle',
-);
-?>
+<div class="panel panel-primary">
+    <div class="panel-heading">        
+        <h3 class="panel-title"><?php echo $model->isNewRecord ? 'Crear Tipo Muelle' : 'Actualizar Tipo Muelle' ?></h3>
+    </div>
+<div class=" panel-body">
 <div class="container">
     <?php if (Yii::app()->user->hasFlash('TiposMuelle')): ?>
         <div class="alert alert-info  alert-dismissable">
@@ -11,9 +10,7 @@ $this->breadcrumbs = array(
             <strong><?php echo Yii::app()->user->getFlash('TiposMuelle'); ?>rttrt</strong>
         </div>
     <?php else: ?>
-        <div class="page-header">
-            <h1>Catálogo Tipos Muelle</h1>
-        </div>
+        
     
         <div class="horizontal-form" >
 
@@ -86,3 +83,5 @@ $this->breadcrumbs = array(
         </div><!-- form -->
     <?php endif;?>
 </div>
+</div>
+    </div>

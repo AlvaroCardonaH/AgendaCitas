@@ -2,16 +2,14 @@
 /* @var $this TiposMuelleController */
 /* @var $model TiposMuelle */
 
-$this->pageTitle = 'Actualizar Tipos Muelle';
+
 $this->breadcrumbs=array(
 	'Tipos Muelle'=>array('index'),
 	$model->IdTipoMuelle=>array('view','id'=>$model->IdTipoMuelle),
 	'Actualizar Registro',
 );
-
+//$this->menu=$this->verPermisosMenuOperaciones();
 ?>
-
-<title><?php echo Yii::app()->controller->module->getName() ." >> " . $this->pageTitle ?></title>
 
 
 <?php

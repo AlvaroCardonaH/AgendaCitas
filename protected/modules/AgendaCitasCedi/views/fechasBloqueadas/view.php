@@ -2,17 +2,14 @@
 /* @var $this FechasBloqueadasController */
 /* @var $model FechasBloqueadas */
 
-$this->pageTitle = 'Visualizar ID Fecha Bloqueada';
 
 $this->breadcrumbs=array(
 	'Fechas Bloqueadas'=>array('index'),
 	$model->IdFechaBloqueada=>array('view','id'=>$model->IdFechaBloqueada),
-	$this->pageTitle,
+	
 );
-
+//$this->menu=$this->verPermisosMenuOperaciones();
 ?>
-
-<title><?php echo Yii::app()->controller->module->getName() ." >> " . $this->pageTitle ?></title>
 
 
 <?php
@@ -23,9 +20,11 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
 
 ?>
 
-<div class="page-header">
-    <h1>Registrar Fechas Bloqueadas</h1>
-</div>
+<div class="panel panel-primary">
+    <div class="panel-heading">        
+        <h3 class="panel-title">Ver Fecha Bloqueada</h3>
+    </div>
+<div class=" panel-body">
 
 
 <div class="fechasbloqueadas-view">
@@ -45,7 +44,7 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
     
     <?php $this->widget('bootstrap.widgets.TbDetailView', array(
         'data' => $model,
-        'htmlOptions'=>array('style'=>'word-wrap:break-word; width:600px; font-family:"Times New Roman"'),
+        'htmlOptions'=>array('style'=>'word-wrap:break-word;"'),
         'attributes' => array(            
             'IdFechaBloqueada',
             array(
@@ -78,4 +77,5 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
     
     
 </div>
-
+</div>
+</div>

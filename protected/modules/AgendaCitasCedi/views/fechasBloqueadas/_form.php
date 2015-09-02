@@ -1,9 +1,8 @@
-<?php
-$this->pageTitle = Yii::app()->name . ' - Registrar Fechas Bloqueadas';
-$this->breadcrumbs = array(
-    'Registrar Fechas Bloqueadas',
-);
-?>
+<div class="panel panel-primary">
+    <div class="panel-heading">        
+        <h3 class="panel-title"><?php echo $model->isNewRecord ? 'Crear Fecha Bloqueada' : 'Actualizar Fecha Bloqueada' ?></h3>
+    </div>
+<div class=" panel-body">
 <div class="container">
     <?php if (Yii::app()->user->hasFlash('FechasBloqueadas')): ?>
         <div class="alert alert-info  alert-dismissable">
@@ -11,9 +10,7 @@ $this->breadcrumbs = array(
             <strong><?php echo Yii::app()->user->getFlash('FechasBloqueadas'); ?>rttrt</strong>
         </div>
     <?php else: ?>
-        <div class="page-header">
-            <h1>Registrar Fechas Bloqueadas</h1>
-        </div>
+        
     
         <div class="horizontal-form" >
 
@@ -183,4 +180,6 @@ $this->breadcrumbs = array(
                 
         </div><!-- form -->
     <?php endif;?>
+</div>
+    </div>
 </div>

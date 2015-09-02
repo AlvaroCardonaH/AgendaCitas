@@ -2,15 +2,11 @@
 /* @var $this MuellesController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->pageTitle = 'Catálogo Muelles';
-
 $this->breadcrumbs=array(
 	'Muelles',
 );
-
+//$this->menu=$this->verPermisosMenuOperaciones();
 ?>
-
-<title><?php echo Yii::app()->controller->module->getName() ." >> " . $this->pageTitle ?></title>
 
 <?php
 $this->widget('zii.widgets.CBreadcrumbs', array(
@@ -19,30 +15,17 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
 ));
 ?>
 
-<div class="page-header">
-    <h1>Catálogo Muelles</h1>
-</div>
+<div class="panel panel-primary">
+    <div class="panel-heading">        
+        <h3 class="panel-title">Muelles</h3>
+    </div>
+<div class=" panel-body">
 
-<?php echo TbHtml::linkButton('Crear Registro', array('color' => TbHtml::BUTTON_COLOR_PRIMARY,
-                                        'method' => 'post',
-                                        'submit' => array ('muelles/create'),
-)); ?>     
-
-<br />
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
         'id'=>'muelles-grid',
 	'dataProvider'=>$model->search(),        
 	'filter'=>$model,
-        'summaryText' => "Mostrando {start} – {end} de {count} resultados",
-        'pager'=>array(
-            'header' => 'Ir a la pagina:',
-            'firstPageLabel' => '< <',
-            'prevPageLabel' => 'Anterior',
-            'nextPageLabel' => 'Siguiente',
-            'lastPageLabel' => '>>',
-        ),    
-        'htmlOptions'=>array('style'=>'word-wrap:break-word; width:1000px; font-family:"Times New Roman"'),
         'columns'=>array(
             array(
                 'name' => 'IdMuelle',
@@ -94,3 +77,5 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
             ),
         ),
 )); ?>
+</div>
+    </div>

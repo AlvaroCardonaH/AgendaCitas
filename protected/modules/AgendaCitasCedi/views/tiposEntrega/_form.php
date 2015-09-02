@@ -1,9 +1,8 @@
-<?php
-$this->pageTitle = Yii::app()->name . ' - Tipos Entrega';
-$this->breadcrumbs = array(
-    'Tipos Entrega',
-);
-?>
+<div class="panel panel-primary">
+    <div class="panel-heading">        
+        <h3 class="panel-title"><?php echo $model->isNewRecord ? 'Crear Tipo Entrega' : 'Actualizar Tipo Entrega' ?></h3>
+    </div>
+<div class=" panel-body">
 <div class="container">
     <?php if (Yii::app()->user->hasFlash('TiposEntrega')): ?>
         <div class="alert alert-info  alert-dismissable">
@@ -11,9 +10,7 @@ $this->breadcrumbs = array(
             <strong><?php echo Yii::app()->user->getFlash('TiposEntrega'); ?>rttrt</strong>
         </div>
     <?php else: ?>
-        <div class="page-header">
-            <h1>Catálogo Tipos Entrega</h1>
-        </div>
+       
     
         <div class="horizontal-form" >
 

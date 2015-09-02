@@ -8,10 +8,8 @@ $this->breadcrumbs=array(
 	'Tipos Muelle'=>array('index'),
 	'Crear Registro',
 );
-
+//$this->menu=$this->verPermisosMenuOperaciones();
 ?>
-
-<title><?php echo Yii::app()->controller->module->getName() ." >> " . $this->pageTitle ?></title>
 
 <?php
 $this->widget('zii.widgets.CBreadcrumbs', array(

@@ -8,10 +8,9 @@ $this->breadcrumbs=array(
 	$model->IdTipoFabricante=>array('view','id'=>$model->IdTipoFabricante),
 	'Actualizar Registro',
 );
-
+//$this->menu=$this->verPermisosMenuOperaciones();
 ?>
 
-<title><?php echo Yii::app()->controller->module->getName() ." >> " . $this->pageTitle ?></title>
 
 
 <?php

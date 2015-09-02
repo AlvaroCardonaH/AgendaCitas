@@ -2,17 +2,14 @@
 /* @var $this MuellesController */
 /* @var $model Muelles */
 
-$this->pageTitle = 'Visualizar ID Muelle';
 
 $this->breadcrumbs=array(
 	'Muelles'=>array('index'),
 	$model->IdMuelle=>array('view','id'=>$model->IdMuelle),
-	$this->pageTitle,
+
 );
-
+//$this->menu=$this->verPermisosMenuOperaciones();
 ?>
-
-<title><?php echo Yii::app()->controller->module->getName() ." >> " . $this->pageTitle ?></title>
 
 
 <?php
@@ -23,9 +20,11 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
 
 ?>
 
-<div class="page-header">
-    <h1>Catálogo Muelles</h1>
-</div>
+<div class="panel panel-primary">
+    <div class="panel-heading">        
+        <h3 class="panel-title">Ver Muelle</h3>
+    </div>
+<div class=" panel-body">
 
 
 <div class="muelles-view">
@@ -45,7 +44,7 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
     
     <?php $this->widget('bootstrap.widgets.TbDetailView', array(
         'data' => $model,
-        'htmlOptions'=>array('style'=>'word-wrap:break-word; width:600px; font-family:"Times New Roman"'),
+        'htmlOptions'=>array('style'=>'word-wrap:break-word;"'),
         'attributes' => array(
             'IdMuelle',
             'NombreMuelle',

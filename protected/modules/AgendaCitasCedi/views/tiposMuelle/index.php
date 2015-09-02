@@ -2,15 +2,12 @@
 /* @var $this TipoMuelleController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->pageTitle = 'Catálogo Tipos Muelles';
 
 $this->breadcrumbs=array(
 	'Tipos Muelles',
 );
-
+//$this->menu=$this->verPermisosMenuOperaciones();
 ?>
-
-<title><?php echo Yii::app()->controller->module->getName() ." >> " . $this->pageTitle ?></title>
 
 <?php
 $this->widget('zii.widgets.CBreadcrumbs', array(
@@ -19,29 +16,17 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
 ));
 ?>
 
-<div class="page-header">
-    <h1>Catálogo Tipos Muelles </h1>
-</div>
-
-<?php echo TbHtml::linkButton('Crear Registro', array('color' => TbHtml::BUTTON_COLOR_PRIMARY,
-                                        'method' => 'post',
-                                        'submit' => array ('TiposMuelle/create'),
-)); ?>     
-
-<br />
+<div class="panel panel-primary">
+    <div class="panel-heading">        
+        <h3 class="panel-title">Tipos Muelle</h3>
+    </div>
+<div class=" panel-body">
+     
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
         'id'=>'tipos-muelles-grid',
 	'dataProvider'=>$model->search(),        
 	'filter'=>$model,
-        'summaryText' => "Mostrando {start} – {end} de {count} resultados",
-        'pager'=>array(
-            'header' => 'Ir a la pagina:',
-            'firstPageLabel' => '< <',
-            'prevPageLabel' => 'Anterior',
-            'nextPageLabel' => 'Siguiente',
-            'lastPageLabel' => '>>',
-        ),    
         'columns'=>array(
             array(
                 'name' => 'IdTipoMuelle',
@@ -60,3 +45,5 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
             ),
         ),
 )); ?>
+</div>
+    </div>
