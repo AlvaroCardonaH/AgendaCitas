@@ -18,7 +18,7 @@ class EstadosOrdenCompra extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'm_estadosordencompra';
+		return 'm_EstadosOrdenCompra';
 	}
 
 	/**

@@ -36,7 +36,7 @@ class AgendaCitasCedi extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 't_agendacitascedi';
+		return 't_AgendaCitasCedi';
 	}
 
 	/**

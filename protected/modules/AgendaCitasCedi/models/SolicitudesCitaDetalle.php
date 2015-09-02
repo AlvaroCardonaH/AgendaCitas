@@ -26,7 +26,7 @@ class SolicitudesCitaDetalle extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 't_solicitudescitadetalle';
+		return 't_SolicitudesCitaDetalle';
 	}
 
 	/**

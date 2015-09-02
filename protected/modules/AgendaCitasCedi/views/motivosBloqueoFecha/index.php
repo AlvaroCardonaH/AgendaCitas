@@ -4,7 +4,7 @@
 
 
 $this->breadcrumbs=array(
-	'Motivos Bloqueo Fechas',
+	'Motivos Bloqueo Fechas'
 );
 
 //$this->menu=$this->verPermisosMenuOperaciones();

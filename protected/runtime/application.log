@@ -5207,3 +5207,29 @@ REQUEST_URI=/AgendaCitas/AgendaCitasCedi/SolicitudesCitaDetalle
 in C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\views\solicitudesCitaDetalle\index.php (36)
 in C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\controllers\SolicitudesCitaDetalleController.php (128)
 in C:\xampp\htdocs\AgendaCitas\index.php (43)
+2015/09/02 14:09:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "AgendaCitasCedi/conductor/index".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('AgendaCitasCedi...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\AgendaCitas\index.php(43): CApplication->run()
+#3 {main}
+REQUEST_URI=/AgendaCitas/AgendaCitasCedi/conductor/index
+HTTP_REFERER=http://localhost:85/AgendaCitas/AgendaCitasCedi
+---
+2015/09/02 14:09:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "AgendaCitasCedi/Conductor/index".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('AgendaCitasCedi...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\AgendaCitas\index.php(43): CApplication->run()
+#3 {main}
+REQUEST_URI=/AgendaCitas/AgendaCitasCedi/Conductor/index
+---
+2015/09/02 14:10:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "AgendaCitasCedi/roles/index".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('AgendaCitasCedi...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\AgendaCitas\index.php(43): CApplication->run()
+#3 {main}
+REQUEST_URI=/AgendaCitas/AgendaCitasCedi/roles/index
+HTTP_REFERER=http://localhost:85/AgendaCitas/AgendaCitasCedi
+---

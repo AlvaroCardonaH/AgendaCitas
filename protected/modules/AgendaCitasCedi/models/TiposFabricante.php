@@ -19,7 +19,7 @@ class TiposFabricante extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'm_tiposfabricante';
+		return 'm_TiposFabricante';
 	}
 
 	/**

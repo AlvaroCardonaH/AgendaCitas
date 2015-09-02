@@ -19,7 +19,7 @@ class TiposMuelle extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'm_tiposmuelle';
+		return 'm_TiposMuelle';
 	}
 
 	/**

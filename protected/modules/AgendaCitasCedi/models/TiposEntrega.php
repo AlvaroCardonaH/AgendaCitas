@@ -19,7 +19,7 @@ class TiposEntrega extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'm_tiposentrega';
+		return 'm_TiposEntrega';
 	}
 
 	/**

@@ -24,7 +24,7 @@ class EstadosRegistro extends CActiveRecord
     
 	public function tableName()
 	{
-		return 'm_estadosregistro';
+		return 'm_EstadosRegistro';
 	}
 
 	/**

@@ -14,7 +14,7 @@ class DiasSemanaAgenda extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'm_diassemanaagenda';
+		return 'm_DiasSemanaAgenda';
 	}
 
 	/**

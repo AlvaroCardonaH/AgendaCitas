@@ -18,7 +18,7 @@ class EstadosSolicitudCita extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'm_estadossolicitudcita';
+		return 'm_EstadosSolicitudCita';
 	}
 
 	/**
