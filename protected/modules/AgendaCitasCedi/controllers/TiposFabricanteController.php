@@ -6,7 +6,7 @@ class TiposFabricanteController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='/layouts/column1';
+	//public $layout='/layouts/column1';
 
 	/**
 	 * @return array action filters
@@ -53,9 +53,17 @@ class TiposFabricanteController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
+            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_TiposFabricante_Ver')) {
+                $this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
+            /*} else {
+                    $this->render('//site/error', array(
+                    'code' => '101',
+                    'message' => Yii::app()->params ['accessError']
+                    ));
+            }*/
+		
 	}
 
 	/**
@@ -64,7 +72,8 @@ class TiposFabricanteController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new TiposFabricante;
+            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_TiposFabricante_Crear')) {
+                $model=new TiposFabricante;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -85,6 +94,13 @@ class TiposFabricanteController extends Controller
 		$this->render('create',array(
 			'model'=>$model,
 		));
+            /*} else {
+                    $this->render('//site/error', array(
+                    'code' => '101',
+                    'message' => Yii::app()->params ['accessError']
+                    ));
+            }*/
+		
 	}
 
 	/**
@@ -94,7 +110,9 @@ class TiposFabricanteController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
+            
+            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_TiposFabricante_Modificar')) {
+                $model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -113,6 +131,13 @@ class TiposFabricanteController extends Controller
 		$this->render('update',array(
 			'model'=>$model,
 		));
+            /*} else {
+                    $this->render('//site/error', array(
+                    'code' => '101',
+                    'message' => Yii::app()->params ['accessError']
+                    ));
+            }*/
+		
 	}
 
 	/**
@@ -134,14 +159,22 @@ class TiposFabricanteController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$model=new TiposFabricante('search');
+            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_TiposFabricante_Listar')) {
+                $model=new TiposFabricante('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['TiposFabricante']))
 			$model->attributes=$_GET['TiposFabricante'];
 
 		$this->render('index',array(
 			'model'=>$model,
-		));            
+		));
+            /*} else {
+                    $this->render('//site/error', array(
+                    'code' => '101',
+                    'message' => Yii::app()->params ['accessError']
+                    ));
+            }*/
+		            
 	}
 
 	/**

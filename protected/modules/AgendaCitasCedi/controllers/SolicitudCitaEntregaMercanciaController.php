@@ -6,7 +6,7 @@ class SolicitudCitaEntregaMercanciaController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='/layouts/column1';
+	//public $layout='/layouts/column1';
 
 	/**
 	 * @return array action filters
@@ -53,9 +53,17 @@ class SolicitudCitaEntregaMercanciaController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
+            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_SolicitudCitaEntregaMercancia_Ver')) {
+                $this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
+            /*} else {
+                    $this->render('//site/error', array(
+                    'code' => '101',
+                    'message' => Yii::app()->params ['accessError']
+                    ));
+            }*/
+		
 	}
 
 	/**
@@ -64,7 +72,8 @@ class SolicitudCitaEntregaMercanciaController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new SolicitudCitaEntregaMercancia;
+            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_SolicitudCitaEntregaMercancia_Crear')) {
+                $model=new SolicitudCitaEntregaMercancia;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -78,7 +87,13 @@ class SolicitudCitaEntregaMercanciaController extends Controller
 
 		$this->render('create',array(
 			'model'=>$model,
-		));
+		));            /*} else {
+                    $this->render('//site/error', array(
+                    'code' => '101',
+                    'message' => Yii::app()->params ['accessError']
+                    ));
+            }*/
+		
 	}
 
 	/**
@@ -88,7 +103,8 @@ class SolicitudCitaEntregaMercanciaController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		//$model=$this->loadModel($id);                
+            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_SolicitudCitaEntregaMercancia_Modificar')) {
+                //$model=$this->loadModel($id);                
             
                 $modelagenda = new AgendaCitasCedi();
                          
@@ -147,11 +163,19 @@ class SolicitudCitaEntregaMercanciaController extends Controller
                     'modelmuelles'=>$modelmuelles,
                    // 'modeldetalle'=>$modeldetalle,
 		));
+            /*} else {
+                    $this->render('//site/error', array(
+                    'code' => '101',
+                    'message' => Yii::app()->params ['accessError']
+                    ));
+            }*/
+		
 	}
         
         public function actionReprogramar($id)
 	{
-		//$model=$this->loadModel($id);                
+                //if (Yii::app()->user->checkAccess('AgendaCitasCedi_SolicitudCitaEntregaMercancia_Reprogramar')) {
+                    //$model=$this->loadModel($id);                
             
                 $modelagenda = new AgendaCitasCedi();
             
@@ -208,6 +232,13 @@ class SolicitudCitaEntregaMercanciaController extends Controller
                     'modelagenda'=>$modelagenda,
                     'modelmuelles'=>$modelmuelles,
 		));
+                /*} else {
+                        $this->render('//site/error', array(
+                        'code' => '101',
+                        'message' => Yii::app()->params ['accessError']
+                        ));
+                }*/
+		
 	}
 
 	/**
@@ -232,14 +263,22 @@ class SolicitudCitaEntregaMercanciaController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$model=new SolicitudCitaEntregaMercancia('search');
+            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_SolicitudCitaEntregaMercancia_Listar')) {
+                $model=new SolicitudCitaEntregaMercancia('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['SolicitudCitaEntregaMercancia']))
 			$model->attributes=$_GET['SolicitudCitaEntregaMercancia'];
 
 		$this->render('index',array(
 			'model'=>$model,
-		));            
+		));
+            /*} else {
+                    $this->render('//site/error', array(
+                    'code' => '101',
+                    'message' => Yii::app()->params ['accessError']
+                    ));
+            }*/
+		            
 	}
 
 	/**

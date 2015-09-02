@@ -2,22 +2,15 @@
 /* @var $this RolesController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->pageTitle = 'Catálogo Motivos Bloqueo Fechas';
 
 $this->breadcrumbs=array(
 	'Motivos Bloqueo Fechas',
 );
 
+//$this->menu=$this->verPermisosMenuOperaciones();
+
 ?>
 
-<title><?php echo Yii::app()->controller->module->getName() ." >> " . $this->pageTitle ?></title>
-
-<?php
-$this->widget('zii.widgets.CBreadcrumbs', array(
-    'links'=>$this->breadcrumbs,
-    'htmlOptions'=>array ('class'=>'breadcrumb'),
-));
-?>
 
 <div class="panel panel-primary">
     <div class="panel-heading">        
@@ -26,11 +19,13 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
 <div class=" panel-body">
 
 
-<?php /*echo TbHtml::linkButton('Crear Registro', array('color' => TbHtml::BUTTON_COLOR_PRIMARY,
+<?php 
+/*echo TbHtml::linkButton('Crear Registro', array('color' => TbHtml::BUTTON_COLOR_PRIMARY,
                                         'method' => 'post',
                                         'submit' => array ('motivosBloqueoFecha/create'),
-)); */?>   
-<?php //$this->menu=$this->verPermisosMenuOperaciones();?>
+)); */
+?>   
+
 
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
@@ -50,7 +45,7 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
                 'name' => 'ObservacionesMotivoBloqueo',
                 'htmlOptions'=>array('width'=>'300'),
             ),             
-            array(  // muestra una columna con los botones "view", "update" y "delete"
+            array( 
                 'class'=>'CButtonColumn',
                 'htmlOptions'=>array('width'=>'100'),
             ),

@@ -6,7 +6,7 @@ class TiposMuelleController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='/layouts/column1';
+	//public $layout='/layouts/column1';
 
 	/**
 	 * @return array action filters
@@ -53,9 +53,17 @@ class TiposMuelleController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
+            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_TiposMuelle_Ver')) {
+                $this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
+            /*} else {
+                    $this->render('//site/error', array(
+                    'code' => '101',
+                    'message' => Yii::app()->params ['accessError']
+                    ));
+            }*/
+		
 	}
 
 	/**
@@ -64,7 +72,8 @@ class TiposMuelleController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new TiposMuelle;
+            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_TiposMuelle_Crear')) {
+                $model=new TiposMuelle;
 
                 $fecha=strftime( "%Y-%m-%d-%H-%M-%S", time() );
                 $model->FechaGraba = $fecha;
@@ -85,6 +94,13 @@ class TiposMuelleController extends Controller
 		$this->render('create',array(
 			'model'=>$model,
 		));
+            /*} else {
+                    $this->render('//site/error', array(
+                    'code' => '101',
+                    'message' => Yii::app()->params ['accessError']
+                    ));
+            }*/
+		
 	}
 
 	/**
@@ -94,7 +110,8 @@ class TiposMuelleController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
+            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_TiposMuelle_Modificar')) {
+                $model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -113,6 +130,13 @@ class TiposMuelleController extends Controller
 		$this->render('update',array(
 			'model'=>$model,
 		));
+            /*} else {
+                    $this->render('//site/error', array(
+                    'code' => '101',
+                    'message' => Yii::app()->params ['accessError']
+                    ));
+            }*/
+		
 	}
 
 	/**
@@ -134,14 +158,22 @@ class TiposMuelleController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$model=new TiposMuelle('search');
+            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_TiposMuelle_Listar')) {
+                $model=new TiposMuelle('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['TiposMuelle']))
 			$model->attributes=$_GET['TiposMuelle'];
 
 		$this->render('index',array(
 			'model'=>$model,
-		));            
+		));
+            /*} else {
+                    $this->render('//site/error', array(
+                    'code' => '101',
+                    'message' => Yii::app()->params ['accessError']
+                    ));
+            }*/ 
+		            
 	}
 
 	/**

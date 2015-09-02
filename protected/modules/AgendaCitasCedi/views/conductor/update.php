@@ -11,8 +11,6 @@ $this->breadcrumbs=array(
 
 ?>
 
-<title><?php echo Yii::app()->controller->module->getName() ." >> " . $this->pageTitle ?></title>
-
 
 <?php
 $this->widget('zii.widgets.CBreadcrumbs', array(

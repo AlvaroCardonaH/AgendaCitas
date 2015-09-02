@@ -6,7 +6,7 @@ class AgendaCitasCediController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='/layouts/column1';
+	//public $layout='/layouts/column1';
 
 	/**
 	 * @return array action filters
@@ -53,11 +53,19 @@ class AgendaCitasCediController extends Controller
 	
 	public function actionView($id)
 	{
-		$this->render('view',array(
+            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_AgendaCitasCedi_Ver')) {
+                $this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
+            /*} else {
+            $this->render('//site/error', array(
+            'code' => '101',
+            'message' => Yii::app()->params ['accessError']
+            ));
+            }
+		
 	}
-         * 
+         
          */
 
 	/**
@@ -66,7 +74,8 @@ class AgendaCitasCediController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new AgendaCitasCedi;
+            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_AgendaCitasCedi_Crear')) {
+                $model=new AgendaCitasCedi;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -81,6 +90,13 @@ class AgendaCitasCediController extends Controller
 		$this->render('create',array(
 			'model'=>$model,
 		));
+            /*} else {
+                    $this->render('//site/error', array(
+                    'code' => '101',
+                    'message' => Yii::app()->params ['accessError']
+                    ));
+            }*/
+		
 	}
 
 	/**
@@ -90,7 +106,8 @@ class AgendaCitasCediController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
+            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_AgendaCitasCedi_Modificar')) {
+                $model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -105,6 +122,13 @@ class AgendaCitasCediController extends Controller
 		$this->render('update',array(
 			'model'=>$model,
 		));
+            /*} else {
+                    $this->render('//site/error', array(
+                    'code' => '101',
+                    'message' => Yii::app()->params ['accessError']
+                     ));
+            }*/
+		
 	}
 
 	/**
@@ -135,11 +159,18 @@ class AgendaCitasCediController extends Controller
                 
                 
 		//$dataProvider=new CActiveDataProvider('AgendaCitasCedi');
-                
-		$this->render('index',array(
+                //if (Yii::app()->user->checkAccess('AgendaCitasCedi_AgendaCitasCedi_Listar')) {
+                        $this->render('index',array(
 			//'model'=>$dataProvider,
                         'IdMuelle'=>$IdMuelle,
-		));
+                        ));
+                /*} else {
+                        $this->render('//site/error', array(
+                        'code' => '101',
+                        'message' => Yii::app()->params ['accessError']
+                        ));
+                }*/
+		
 	}
 
 	/**

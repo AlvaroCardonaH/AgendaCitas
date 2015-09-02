@@ -1,6 +1,6 @@
 <?php
 
-class LogisticaFabricanteController extends Controller
+class ConductorController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -23,7 +23,7 @@ class LogisticaFabricanteController extends Controller
 	 * Specifies the access control rules.
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
-	 
+	
 	public function accessRules()
 	{
 		return array(
@@ -53,16 +53,17 @@ class LogisticaFabricanteController extends Controller
 	 */
 	public function actionView($id)
 	{
-            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_LogisticaFabricante_Ver')) {
-                $this->render('view',array(
+                //if (Yii::app()->user->checkAccess('AgendaCitasCedi_Conductor_Ver')) {
+            
+			$this->render('view',array(
 			'model'=>$this->loadModel($id),
-		));
-            /*} else {
+                        ));
+                /*} else {
                     $this->render('//site/error', array(
-                    'code' => '101',
-                    'message' => Yii::app()->params ['accessError']
+                        'code' => '101',
+                        'message' => Yii::app()->params ['accessError']
                     ));
-            }*/
+                }*/
 		
 	}
 
@@ -72,34 +73,35 @@ class LogisticaFabricanteController extends Controller
 	 */
 	public function actionCreate()
 	{
-            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_LogisticaFabricante_Crear')) {
-                $model=new LogisticaFabricante;
+                //if (Yii::app()->user->checkAccess('AgendaCitasCedi_Conductor_Crear')) {
+                    
+                    $model=new Conductor;
+                    // Uncomment the following line if AJAX validation is needed
+                    // $this->performAjaxValidation($model);
 
-                $fecha=strftime( "%Y-%m-%d-%H-%M-%S", time() );
-                $model->FechaGraba = $fecha;
-                $model->FechaModifica = $fecha; 
-                $model->IdUsuarioGraba = Yii::app()->user->id;
-                $model->IdUsuarioModifica = Yii::app()->user->id;
-                
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+                    $fecha=strftime( "%Y-%m-%d-%H-%M-%S", time() );
+                    $model->FechaGraba = $fecha;
+                    $model->FechaModifica = $fecha; 
+                    $model->IdUsuarioGraba = Yii::app()->user->id;
+                    $model->IdUsuarioModifica = Yii::app()->user->id;  
 
-		if(isset($_POST['LogisticaFabricante']))
-		{
-			$model->attributes=$_POST['LogisticaFabricante'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->IdLogisticaFabricante));
-		}
+                    if(isset($_POST['Conductor']))
+                    {
+                            $model->attributes=$_POST['Conductor'];
+                            if($model->save())
+                                    $this->redirect(array('view','id'=>$model->IdConductor));
+                    }
 
-		$this->render('create',array(
-			'model'=>$model,
-		));
-            /*} else {
+                    $this->render('create',array(
+                            'model'=>$model,
+                    )); 
+                    
+               /* } else {
                     $this->render('//site/error', array(
-                    'code' => '101',
-                    'message' => Yii::app()->params ['accessError']
+                        'code' => '101',
+                        'message' => Yii::app()->params ['accessError']
                     ));
-            }*/
+                }*/
 		
 	}
 
@@ -110,33 +112,35 @@ class LogisticaFabricanteController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_LogisticaFabricante_Modificar')) {
+		
+        //if (Yii::app()->user->checkAccess('AgendaCitasCedi_Conductor_Modificar')) {
+                
                 $model=$this->loadModel($id);
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
 
                 $fecha=strftime( "%Y-%m-%d-%H-%M-%S", time() );
                 $model->FechaModifica = $fecha; 
                 $model->IdUsuarioModifica = Yii::app()->user->id;
                 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['LogisticaFabricante']))
+		if(isset($_POST['Conductor']))
 		{
-			$model->attributes=$_POST['LogisticaFabricante'];
+			$model->attributes=$_POST['Conductor'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->IdLogisticaFabricante));
+				$this->redirect(array('view','id'=>$model->IdConductor));
 		}
 
 		$this->render('update',array(
 			'model'=>$model,
 		));
-            /*} else {
-                    $this->render('//site/error', array(
-                    'code' => '101',
-                    'message' => Yii::app()->params ['accessError']
-                    ));
-            }*/
-		
+        /*} else {
+            $this->render('//site/error', array(
+                'code' => '101',
+                'message' => Yii::app()->params ['accessError']
+            ));
+        }*/
+                
 	}
 
 	/**
@@ -158,22 +162,24 @@ class LogisticaFabricanteController extends Controller
 	 */
 	public function actionIndex()
 	{
-            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_LogisticaFabricante_Listar')) {
-                $model=new LogisticaFabricante('search');
+            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_Conductor_Listar')){
+            
+		$model=new Conductor('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['LogisticaFabricante']))
-			$model->attributes=$_GET['LogisticaFabricante'];
+		if(isset($_GET['Conductor']))
+			$model->attributes=$_GET['Conductor'];
 
 		$this->render('index',array(
 			'model'=>$model,
-		));
+		));  
             /*} else {
-                    $this->render('//site/error', array(
+                $this->render('//site/error', array(
                     'code' => '101',
                     'message' => Yii::app()->params ['accessError']
-                    ));
+                ));
             }*/
-		            
+
+		          
 	}
 
 	/**
@@ -181,10 +187,10 @@ class LogisticaFabricanteController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new LogisticaFabricante('search');
+		$model=new Conductor('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['LogisticaFabricante']))
-			$model->attributes=$_GET['LogisticaFabricante'];
+		if(isset($_GET['Conductor']))
+			$model->attributes=$_GET['Conductor'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -195,12 +201,12 @@ class LogisticaFabricanteController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return LogisticaFabricante the loaded model
+	 * @return Conductor the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=LogisticaFabricante::model()->findByPk($id);
+		$model=Conductor::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -208,11 +214,11 @@ class LogisticaFabricanteController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param LogisticaFabricante $model the model to be validated
+	 * @param Conductor $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='logistica-fabricante-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='conductor-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

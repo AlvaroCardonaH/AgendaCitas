@@ -5145,3 +5145,65 @@ Stack trace:
 REQUEST_URI=/AgendaCitas/AgendaCitasCedi/motivosBloqueoFecha/index
 HTTP_REFERER=http://localhost:85/AgendaCitas/AgendaCitasCedi
 ---
+2015/09/01 22:27:42 [error] [exception.CException] exception 'CException' with message 'Alias "application.modules.AgendaCitas.models.SolicitudesCitaDetalle" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\yii\framework\YiiBase.php:323
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\gii\generators\crud\CrudCode.php(59): YiiBase::import('application.mod...', true)
+#1 C:\xampp\htdocs\yii\framework\validators\CInlineValidator.php(42): CrudCode->validateModel('model', Array)
+#2 C:\xampp\htdocs\yii\framework\validators\CValidator.php(201): CInlineValidator->validateAttribute(Object(CrudCode), 'model')
+#3 C:\xampp\htdocs\yii\framework\base\CModel.php(159): CValidator->validate(Object(CrudCode), NULL)
+#4 C:\xampp\htdocs\yii\framework\gii\CCodeGenerator.php(159): CModel->validate()
+#5 C:\xampp\htdocs\yii\framework\gii\CCodeGenerator.php(63): CCodeGenerator->prepare()
+#6 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CCodeGenerator->actionIndex()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('gii/crud/index')
+#12 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\AgendaCitas\index.php(43): CApplication->run()
+#14 {main}
+REQUEST_URI=/AgendaCitas/gii/crud/index
+HTTP_REFERER=http://localhost:85/AgendaCitas/gii/crud/index
+---
+2015/09/01 22:28:03 [error] [exception.CException] exception 'CException' with message 'Alias "application.modules.AgendaCitas.models.SolicitudesCitaDetalle" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\yii\framework\YiiBase.php:323
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\gii\generators\crud\CrudCode.php(59): YiiBase::import('application.mod...', true)
+#1 C:\xampp\htdocs\yii\framework\validators\CInlineValidator.php(42): CrudCode->validateModel('model', Array)
+#2 C:\xampp\htdocs\yii\framework\validators\CValidator.php(201): CInlineValidator->validateAttribute(Object(CrudCode), 'model')
+#3 C:\xampp\htdocs\yii\framework\base\CModel.php(159): CValidator->validate(Object(CrudCode), NULL)
+#4 C:\xampp\htdocs\yii\framework\gii\CCodeGenerator.php(159): CModel->validate()
+#5 C:\xampp\htdocs\yii\framework\gii\CCodeGenerator.php(63): CCodeGenerator->prepare()
+#6 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CCodeGenerator->actionIndex()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('gii/crud/index')
+#12 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\AgendaCitas\index.php(43): CApplication->run()
+#14 {main}
+REQUEST_URI=/AgendaCitas/gii/crud/index
+HTTP_REFERER=http://localhost:85/AgendaCitas/gii/crud/index
+---
+2015/09/01 22:28:59 [error] [php] Undefined variable: model (C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\views\solicitudesCitaDetalle\index.php:36)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): SolicitudesCitaDetalleController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): SolicitudesCitaDetalleController->renderPartial()
+#2 C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\controllers\SolicitudesCitaDetalleController.php(128): SolicitudesCitaDetalleController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SolicitudesCitaDetalleController->actionIndex()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): SolicitudesCitaDetalleController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): SolicitudesCitaDetalleController->filterAccessControl()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): SolicitudesCitaDetalleController->runActionWithFilters()
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SolicitudesCitaDetalleController->run()
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\AgendaCitas\index.php(43): CWebApplication->run()
+REQUEST_URI=/AgendaCitas/AgendaCitasCedi/SolicitudesCitaDetalle
+in C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\views\solicitudesCitaDetalle\index.php (36)
+in C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\controllers\SolicitudesCitaDetalleController.php (128)
+in C:\xampp\htdocs\AgendaCitas\index.php (43)

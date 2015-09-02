@@ -6,7 +6,7 @@ class EstadosRegistroController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='/layouts/column1';
+	//public $layout='/layouts/column1';
 
 	/**
 	 * @return array action filters
@@ -52,9 +52,17 @@ class EstadosRegistroController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
+                //if (Yii::app()->user->checkAccess('AgendaCitasCedi_EstadosRegistro_Ver')) {
+                        $this->render('view',array(
 			'model'=>$this->loadModel($id),
-		));
+                        ));
+                /*} else {
+                        $this->render('//site/error', array(
+                        'code' => '101',
+                        'message' => Yii::app()->params ['accessError']
+                        ));
+                }*/
+		
 	}
 
 	/**
@@ -63,7 +71,8 @@ class EstadosRegistroController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new EstadosRegistro;
+            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_EstadosRegistro_Crear')) {
+                $model=new EstadosRegistro;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -83,6 +92,13 @@ class EstadosRegistroController extends Controller
 		$this->render('create',array(
 			'model'=>$model,
 		));
+            /*} else {
+                    $this->render('//site/error', array(
+                    'code' => '101',
+                    'message' => Yii::app()->params ['accessError']
+                    ));
+            }*/
+		
 	}
 
 	/**
@@ -92,7 +108,8 @@ class EstadosRegistroController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
+            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_EstadosRegistro_Modificar')) {
+                $model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -110,6 +127,13 @@ class EstadosRegistroController extends Controller
 		$this->render('update',array(
 			'model'=>$model,
 		));
+            /*} else {
+                    $this->render('//site/error', array(
+                    'code' => '101',
+                    'message' => Yii::app()->params ['accessError']
+                    ));
+            }*/     
+		
 	}
 
 	/**
@@ -131,7 +155,8 @@ class EstadosRegistroController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$model=new EstadosRegistro('search');
+            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_EstadosRegistro_Listar')) {
+                $model=new EstadosRegistro('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['EstadosRegistro']))
 			$model->attributes=$_GET['EstadosRegistro'];
@@ -139,6 +164,13 @@ class EstadosRegistroController extends Controller
 		$this->render('index',array(
 			'model'=>$model,
 		));
+            /*} else {
+                    $this->render('//site/error', array(
+                    'code' => '101',
+                    'message' => Yii::app()->params ['accessError']
+                    ));
+            }*/
+		
             
 	}
 

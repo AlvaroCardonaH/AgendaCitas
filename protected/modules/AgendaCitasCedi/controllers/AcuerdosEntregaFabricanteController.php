@@ -6,7 +6,7 @@ class AcuerdosEntregaFabricanteController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='/layouts/column1';
+	//public $layout='/layouts/column1';
 
 	/**
 	 * @return array action filters
@@ -53,9 +53,17 @@ class AcuerdosEntregaFabricanteController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
+            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_AcuerdosEntregaFabricante_Ver')) {
+                    $this->render('view',array(
 			'model'=>$this->loadModel($id),
-		));
+                    ));
+            /*} else {
+                    $this->render('//site/error', array(
+                    'code' => '101',
+                    'message' => Yii::app()->params ['accessError']
+                    ));
+            }*/
+		
 	}
 
 	/**
@@ -64,7 +72,9 @@ class AcuerdosEntregaFabricanteController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new AcuerdosEntregaFabricante();
+            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_AcuerdosEntregaFabricante_Crear')) {
+            
+                $model=new AcuerdosEntregaFabricante();
 
                 $fecha=strftime( "%Y-%m-%d-%H-%M-%S", time() );
                 $model->FechaGraba = $fecha;
@@ -85,6 +95,13 @@ class AcuerdosEntregaFabricanteController extends Controller
 		$this->render('create',array(
 			'model'=>$model,
 		));
+            /*} else {
+                    $this->render('//site/error', array(
+                    'code' => '101',
+                    'message' => Yii::app()->params ['accessError']
+                    ));
+            }*/
+		
 	}
 
 	/**
@@ -94,7 +111,8 @@ class AcuerdosEntregaFabricanteController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
+            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_AcuerdosEntregaFabricante_Modificar')) {
+                $model=$this->loadModel($id);
 
                 $fecha=strftime( "%Y-%m-%d-%H-%M-%S", time() );
                 $model->FechaModifica = $fecha; 
@@ -113,6 +131,13 @@ class AcuerdosEntregaFabricanteController extends Controller
 		$this->render('update',array(
 			'model'=>$model,
 		));
+            /*} else {
+                    $this->render('//site/error', array(
+                    'code' => '101',
+                    'message' => Yii::app()->params ['accessError']
+                    ));
+            }*/
+
 	}
 
 	/**
@@ -134,14 +159,22 @@ class AcuerdosEntregaFabricanteController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$model=new AcuerdosEntregaFabricante('search');
+            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_AcuerdosEntregaFabricante_Listar')) {
+                $model=new AcuerdosEntregaFabricante('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['AcuerdosEntregaFabricante']))
 			$model->attributes=$_GET['AcuerdosEntregaFabricante'];
 
 		$this->render('index',array(
 			'model'=>$model,
-		));            
+		));
+            /*} else {
+                    $this->render('//site/error', array(
+                    'code' => '101',
+                    'message' => Yii::app()->params ['accessError']
+                    ));
+            }*/   
+		            
 	}
 
 	/**

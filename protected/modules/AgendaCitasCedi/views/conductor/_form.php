@@ -1,11 +1,9 @@
-<link rel="stylesheet" href="/css/styleFormulariosAgendaCitas.css" type="text/css" media="all">
-
-<?php
-$this->pageTitle = Yii::app()->name . ' - Usuarios';
-$this->breadcrumbs = array(
-    'Conductor',
-);
-?>
+<div class="panel panel-primary">
+    <div class="panel-heading">        
+        <h3 class="panel-title"><?php echo $model->isNewRecord ? 'Crear Conductor' : 'Actualizar Conductor' ?></h3>
+    </div>
+<div class=" panel-body">
+    
 <div class="container">
     <?php if (Yii::app()->user->hasFlash('Conductor')): ?>
         <div class="alert alert-info  alert-dismissable">
@@ -13,9 +11,7 @@ $this->breadcrumbs = array(
             <strong><?php echo Yii::app()->user->getFlash('Conductor'); ?>rttrt</strong>
         </div>
     <?php else: ?>
-        <div class="page-header">
-            <h1>Catálogo Conductor</h1>
-        </div>
+       
     
         <div class="horizontal-form" >
                 
@@ -154,4 +150,6 @@ $this->breadcrumbs = array(
                             
         </div><!-- form -->
     <?php endif;?>
+</div>
+</div>
 </div>

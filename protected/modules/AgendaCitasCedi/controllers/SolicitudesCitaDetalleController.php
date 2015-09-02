@@ -6,7 +6,7 @@ class SolicitudesCitaDetalleController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	//public $layout='//layouts/column2';
 
 	/**
 	 * @return array action filters
@@ -51,9 +51,17 @@ class SolicitudesCitaDetalleController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
+                //if (Yii::app()->user->checkAccess('AgendaCitasCedi_SolicitudCitaDetalle_Ver')) {
+                $this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
+                /*} else {
+                        $this->render('//site/error', array(
+                        'code' => '101',
+                        'message' => Yii::app()->params ['accessError']
+                        ));
+                }*/
+		
 	}
 
 	/**
@@ -62,7 +70,8 @@ class SolicitudesCitaDetalleController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new SolicitudesCitaDetalle;
+            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_SolicitudCitaDetalle_Crear')) {
+                $model=new SolicitudesCitaDetalle;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -77,6 +86,13 @@ class SolicitudesCitaDetalleController extends Controller
 		$this->render('create',array(
 			'model'=>$model,
 		));
+            /*} else {
+                    $this->render('//site/error', array(
+                    'code' => '101',
+                    'message' => Yii::app()->params ['accessError']
+                    ));
+            }*/
+		
 	}
 
 	/**
@@ -86,7 +102,8 @@ class SolicitudesCitaDetalleController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
+            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_SolicitudCitaDetalle_Modificar')) {
+                $model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -101,6 +118,13 @@ class SolicitudesCitaDetalleController extends Controller
 		$this->render('update',array(
 			'model'=>$model,
 		));
+            /*} else {
+                    $this->render('//site/error', array(
+                    'code' => '101',
+                    'message' => Yii::app()->params ['accessError']
+                    ));
+            }*/
+		
 	}
 
 	/**
@@ -122,10 +146,18 @@ class SolicitudesCitaDetalleController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('SolicitudesCitaDetalle');
+            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_SolicitudCitaDetalle_Listar')) {
+                $dataProvider=new CActiveDataProvider('SolicitudesCitaDetalle');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
+            /*} else {
+                    $this->render('//site/error', array(
+                    'code' => '101',
+                    'message' => Yii::app()->params ['accessError']
+                    ));
+            }*/
+		
 	}
 
 	/**

@@ -6,7 +6,7 @@ class MuellesController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='/layouts/column1';
+	//public $layout='/layouts/column1';
 
 	/**
 	 * @return array action filters
@@ -53,9 +53,16 @@ class MuellesController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
+            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_Muelles_Ver')) {
+                $this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
+            /*} else {
+                    $this->render('//site/error', array(
+                    'code' => '101',
+                    'message' => Yii::app()->params ['accessError']
+                    ));
+            }*/
 	}
 
 	/**
@@ -64,7 +71,8 @@ class MuellesController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Muelles;
+            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_Muelles_Crear')) {
+                $model=new Muelles;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -87,6 +95,13 @@ class MuellesController extends Controller
 		$this->render('create',array(
 			'model'=>$model,
 		));
+            /*} else {
+                    $this->render('//site/error', array(
+                    'code' => '101',
+                    'message' => Yii::app()->params ['accessError']
+                    ));
+            }*/
+		
 	}
 
 	/**
@@ -96,7 +111,8 @@ class MuellesController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
+            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_Muelles_Modificar')) {
+                $model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -115,6 +131,13 @@ class MuellesController extends Controller
 		$this->render('update',array(
 			'model'=>$model,
 		));
+            /*} else {
+                    $this->render('//site/error', array(
+                    'code' => '101',
+                    'message' => Yii::app()->params ['accessError']
+                    ));
+            }*/
+		
 	}
 
 	/**
@@ -136,7 +159,8 @@ class MuellesController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$model=new Muelles('search');
+            //if (Yii::app()->user->checkAccess('AgendaCitasCedi_Muelles_Listar')) {
+                $model=new Muelles('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Muelles']))
 			$model->attributes=$_GET['Muelles'];
@@ -144,6 +168,13 @@ class MuellesController extends Controller
 		$this->render('index',array(
 			'model'=>$model,
 		));            
+
+            /*} else {
+                    $this->render('//site/error', array(
+                    'code' => '101',
+                    'message' => Yii::app()->params ['accessError']
+                    ));
+            }*/
 	}
 
 	/**

@@ -53,9 +53,19 @@ class MotivosBloqueoFechaController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
+                //if (Yii::app()->user->checkAccess('AgendaCitasCedi_MotivosBloqueoFecha_Ver')) {
+            
+                        $this->render('view',array(
 			'model'=>$this->loadModel($id),
-		));
+                        ));
+                /*} else {
+                        $this->render('//site/error', array(
+                        'code' => '101',
+                        'message' => Yii::app()->params ['accessError']
+                        ));
+                }*/
+
+		
 	}
 
 	/**
@@ -65,8 +75,8 @@ class MotivosBloqueoFechaController extends Controller
 	public function actionCreate()
 	{
             
-           // if (Yii::app()->user->checkAccess('AgendaCitasCedi_MotivosBloqueoFecha_Crear')) 
-           // {
+           // if (Yii::app()->user->checkAccess('AgendaCitasCedi_MotivosBloqueoFecha_Crear')){
+           
                 $model=new MotivosBloqueoFecha;
 
 		// Uncomment the following line if AJAX validation is needed
@@ -105,25 +115,34 @@ class MotivosBloqueoFechaController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
+                //if (Yii::app()->user->checkAccess('AgendaCitasCedi_MotivosBloqueoFecha_Modificar')) {
+            
+                    $model=$this->loadModel($id);
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+                    // Uncomment the following line if AJAX validation is needed
+                    // $this->performAjaxValidation($model);
 
-                $fecha=strftime( "%Y-%m-%d-%H-%M-%S", time() );
-                $model->FechaModifica = $fecha; 
-                $model->IdUsuarioModifica = Yii::app()->user->id;
-                
-		if(isset($_POST['MotivosBloqueoFecha']))
-		{
-			$model->attributes=$_POST['MotivosBloqueoFecha'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->IdMotivoBloqueo));
-		}
+                    $fecha=strftime( "%Y-%m-%d-%H-%M-%S", time() );
+                    $model->FechaModifica = $fecha; 
+                    $model->IdUsuarioModifica = Yii::app()->user->id;
 
-		$this->render('update',array(
-			'model'=>$model,
-		));
+                    if(isset($_POST['MotivosBloqueoFecha']))
+                    {
+                            $model->attributes=$_POST['MotivosBloqueoFecha'];
+                            if($model->save())
+                                    $this->redirect(array('view','id'=>$model->IdMotivoBloqueo));
+                    }
+
+                    $this->render('update',array(
+                            'model'=>$model,
+                    ));
+                /*} else {
+                    $this->render('//site/error', array(
+                        'code' => '101',
+                        'message' => Yii::app()->params ['accessError']
+                    ));
+                }*/
+		
 	}
 
 	/**
@@ -146,8 +165,8 @@ class MotivosBloqueoFechaController extends Controller
 	public function actionIndex()
 	{
             
-                //if (Yii::app()->user->checkAccess('admin')) 
-                //{
+                //if (Yii::app()->user->checkAccess('AgendaCitasCedi_MotivosBloqueoFecha_Listar')) {
+            
 		$model=new MotivosBloqueoFecha('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['MotivosBloqueoFecha']))
