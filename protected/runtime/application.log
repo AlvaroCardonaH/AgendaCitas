@@ -5233,3 +5233,62 @@ Stack trace:
 REQUEST_URI=/AgendaCitas/AgendaCitasCedi/roles/index
 HTTP_REFERER=http://localhost:85/AgendaCitas/AgendaCitasCedi
 ---
+2015/09/02 14:16:02 [error] [php] include(Cedi.php): failed to open stream: No such file or directory (C:\xampp\htdocs\yii\framework\YiiBase.php:432)
+Stack trace:
+#0 C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\views\AcuerdosEntregaFabricante\index.php(62): spl_autoload_call()
+#1 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): AcuerdosEntregaFabricanteController->renderInternal()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(869): AcuerdosEntregaFabricanteController->renderFile()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(782): AcuerdosEntregaFabricanteController->renderPartial()
+#5 C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\controllers\AcuerdosEntregaFabricanteController.php(170): AcuerdosEntregaFabricanteController->render()
+#6 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): AcuerdosEntregaFabricanteController->actionIndex()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): AcuerdosEntregaFabricanteController->runAction()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#11 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): AcuerdosEntregaFabricanteController->filterAccessControl()
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(265): AcuerdosEntregaFabricanteController->runActionWithFilters()
+#15 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): AcuerdosEntregaFabricanteController->run()
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#17 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\AgendaCitas\index.php(43): CWebApplication->run()
+REQUEST_URI=/AgendaCitas/AgendaCitasCedi/acuerdosEntregaFabricante/index
+in C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\views\AcuerdosEntregaFabricante\index.php (62)
+in C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\controllers\AcuerdosEntregaFabricanteController.php (170)
+in C:\xampp\htdocs\AgendaCitas\index.php (43)
+2015/09/02 14:16:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "AgendaCitasCedi/ordenesCompraCitasCedi/index".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('AgendaCitasCedi...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\AgendaCitas\index.php(43): CApplication->run()
+#3 {main}
+REQUEST_URI=/AgendaCitas/AgendaCitasCedi/ordenesCompraCitasCedi/index
+HTTP_REFERER=http://localhost:85/AgendaCitas/AgendaCitasCedi
+---
+2015/09/02 14:16:23 [error] [php] include(Cedi.php): failed to open stream: No such file or directory (C:\xampp\htdocs\yii\framework\YiiBase.php:432)
+Stack trace:
+#0 C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\views\SolicitudCitaEntregaMercancia\index.php(84): spl_autoload_call()
+#1 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): SolicitudCitaEntregaMercanciaController->renderInternal()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(869): SolicitudCitaEntregaMercanciaController->renderFile()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(782): SolicitudCitaEntregaMercanciaController->renderPartial()
+#5 C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\controllers\SolicitudCitaEntregaMercanciaController.php(274): SolicitudCitaEntregaMercanciaController->render()
+#6 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SolicitudCitaEntregaMercanciaController->actionIndex()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): SolicitudCitaEntregaMercanciaController->runAction()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#11 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): SolicitudCitaEntregaMercanciaController->filterAccessControl()
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(265): SolicitudCitaEntregaMercanciaController->runActionWithFilters()
+#15 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SolicitudCitaEntregaMercanciaController->run()
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#17 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\AgendaCitas\index.php(43): CWebApplication->run()
+REQUEST_URI=/AgendaCitas/AgendaCitasCedi/solicitudCitaEntregaMercancia/index
+in C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\views\SolicitudCitaEntregaMercancia\index.php (84)
+in C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\controllers\SolicitudCitaEntregaMercanciaController.php (274)
+in C:\xampp\htdocs\AgendaCitas\index.php (43)
