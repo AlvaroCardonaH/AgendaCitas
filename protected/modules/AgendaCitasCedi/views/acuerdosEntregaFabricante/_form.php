@@ -1,9 +1,8 @@
-<?php
-$this->pageTitle = Yii::app()->name . ' - Registrar Acuerdos de Entrega de Mercancía';
-$this->breadcrumbs = array(
-    'Registrar Acuerdos de Entrega de Mercancía',
-);
-?>
+<div class="panel panel-primary">
+    <div class="panel-heading">        
+        <h3 class="panel-title"><?php echo $model->isNewRecord ? 'Crear Acuerdo de Entrega' : 'Actualizar Acuerdo de Entrega' ?></h3>
+    </div>
+<div class=" panel-body">
 <div class="container">
     <?php if (Yii::app()->user->hasFlash('AcuerdosEntregaFabricante')): ?>
         <div class="alert alert-info  alert-dismissable">
@@ -11,9 +10,7 @@ $this->breadcrumbs = array(
             <strong><?php echo Yii::app()->user->getFlash('AcuerdosEntregaFabricante'); ?>rttrt</strong>
         </div>
     <?php else: ?>
-        <div class="page-header">
-            <h1>Registrar Acuerdos de Entrega de Mercancía</h1>
-        </div>
+        
     
         <div class="horizontal-form" >
 
@@ -138,4 +135,4 @@ $this->breadcrumbs = array(
                 
         </div><!-- form -->
     <?php endif;?>
-</div>
+</div></div></div>

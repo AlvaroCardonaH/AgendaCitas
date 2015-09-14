@@ -1,9 +1,8 @@
-<?php
-$this->pageTitle = Yii::app()->name . ' - Logística Entrega de Mercancía';
-$this->breadcrumbs = array(
-    'Logística Entrega de Mercancía',
-);
-?>
+<div class="panel panel-primary">
+    <div class="panel-heading">        
+        <h3 class="panel-title"><?php echo $model->isNewRecord ? 'Crear Logistica de Entrega' : 'Actualizar Logistica de Entrega' ?></h3>
+    </div>
+<div class=" panel-body">
 <div class="container">
     <?php if (Yii::app()->user->hasFlash('LogisticaFabricante')): ?>
         <div class="alert alert-info  alert-dismissable">
@@ -11,10 +10,7 @@ $this->breadcrumbs = array(
             <strong><?php echo Yii::app()->user->getFlash('LogisticaFabricante'); ?>rttrt</strong>
         </div>
     <?php else: ?>
-        <div class="page-header">
-            <h1>Logística Entrega de Mercancía</h1>
-        </div>
-    
+        
         <div class="horizontal-form" >
 
             <?php $form = $this->beginWidget('CActiveForm', array(
@@ -125,4 +121,4 @@ $this->breadcrumbs = array(
                 
         </div><!-- form -->
     <?php endif;?>
-</div>
+</div></div></div>

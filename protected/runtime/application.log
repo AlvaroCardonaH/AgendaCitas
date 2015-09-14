@@ -5422,3 +5422,103 @@ Stack trace:
 REQUEST_URI=/AgendaCitas/AgendaCitasCedi/ordenesCompraCitasCedi/index
 HTTP_REFERER=http://localhost:85/AgendaCitas/AgendaCitasCedi
 ---
+2015/09/02 23:36:39 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'siicop.m_LogisticaFabricante' doesn't exist. La sentencia SQL ejecutada fue: SHOW FULL COLUMNS FROM `m_LogisticaFabricante`.
+in C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\controllers\LogisticaFabricanteController.php (162)
+in C:\xampp\htdocs\AgendaCitas\index.php (43)
+2015/09/02 23:36:39 [error] [exception.CDbException] exception 'CDbException' with message 'La tabla "m_LogisticaFabricante" definida en la clase active record "LogisticaFabricante" no se ha podido encontrar en la base de datos.' in C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php:2385
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(LogisticaFabricante))
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(79): CActiveRecord->getMetaData()
+#2 C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\controllers\LogisticaFabricanteController.php(162): CActiveRecord->__construct('search')
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): LogisticaFabricanteController->actionIndex()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('AgendaCitasCedi...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\AgendaCitas\index.php(43): CApplication->run()
+#16 {main}
+REQUEST_URI=/AgendaCitas/AgendaCitasCedi/logisticaFabricante/index
+HTTP_REFERER=http://localhost:85/AgendaCitas/AgendaCitasCedi
+---
+2015/09/03 23:34:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "AgendaCitasCedi/conductor/index"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('AgendaCitasCedi...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\AgendaCitas\index.php(43): CApplication->run()
+#3 {main}
+REQUEST_URI=/AgendaCitas/AgendaCitasCedi/conductor/index
+HTTP_REFERER=http://190.85.144.82/AgendaCitas/AgendaCitasCedi
+---
+2015/09/03 23:34:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "AgendaCitasCedi/site/logout"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('AgendaCitasCedi...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\AgendaCitas\index.php(43): CApplication->run()
+#3 {main}
+REQUEST_URI=/AgendaCitas/AgendaCitasCedi/site/logout
+HTTP_REFERER=http://190.85.144.82/AgendaCitas/AgendaCitasCedi/tiposMuelle/index
+---
+2015/09/03 23:49:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "AgendaCitasCedi/ordenesCompraCitasCedi/index"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('AgendaCitasCedi...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\AgendaCitas\index.php(43): CApplication->run()
+#3 {main}
+REQUEST_URI=/AgendaCitas/AgendaCitasCedi/ordenesCompraCitasCedi/index
+HTTP_REFERER=http://190.85.144.82/AgendaCitas/AgendaCitasCedi
+---
+2015/09/03 23:49:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "AgendaCitasCedi/ordenesCompraCitasCedi/index"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('AgendaCitasCedi...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\AgendaCitas\index.php(43): CApplication->run()
+#3 {main}
+REQUEST_URI=/AgendaCitas/AgendaCitasCedi/ordenesCompraCitasCedi/index
+HTTP_REFERER=http://190.85.144.82/AgendaCitas/AgendaCitasCedi
+---
+2015/09/06 17:57:14 [error] [php] include(Roles.php): failed to open stream: No such file or directory (C:\xampp\htdocs\yii\framework\YiiBase.php:432)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(395): spl_autoload_call()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(614): model()
+#2 C:\xampp\htdocs\yii\framework\web\CSort.php(330): User->getAttributeLabel()
+#3 C:\xampp\htdocs\yii\framework\web\CSort.php(282): CSort->resolveLabel()
+#4 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CDataColumn.php(119): CSort->link()
+#5 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridColumn.php(186): CDataColumn->getHeaderCellContent()
+#6 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridColumn.php(130): CDataColumn->renderHeaderCellContent()
+#7 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(512): CDataColumn->renderHeaderCell()
+#8 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(486): CGridView->renderTableHeader()
+#9 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(181): CGridView->renderItems()
+#10 unknown(0): CGridView->renderSection()
+#11 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(164): preg_replace_callback()
+#12 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(149): CGridView->renderContent()
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(181): CGridView->run()
+#14 C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\views\user\index.php(75): UserController->widget()
+#15 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#16 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): UserController->renderInternal()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(869): UserController->renderFile()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(782): UserController->renderPartial()
+#19 C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\controllers\UserController.php(132): UserController->render()
+#20 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UserController->actionIndex()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#22 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UserController->runAction()
+#23 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#24 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#25 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UserController->filterAccessControl()
+#26 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#27 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#28 C:\xampp\htdocs\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#29 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UserController->run()
+#30 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#31 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#32 C:\xampp\htdocs\AgendaCitas\index.php(43): CWebApplication->run()
+REQUEST_URI=/AgendaCitas/AgendaCitasCedi/user
+in C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\views\user\index.php (75)
+in C:\xampp\htdocs\AgendaCitas\protected\modules\AgendaCitasCedi\controllers\UserController.php (132)
+in C:\xampp\htdocs\AgendaCitas\index.php (43)

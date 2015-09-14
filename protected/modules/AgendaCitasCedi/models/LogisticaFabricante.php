@@ -21,7 +21,7 @@ class LogisticaFabricante extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'm_LogisticaFabricante';
+		return 't_LogisticaFabricante';
 	}
 
 	/**

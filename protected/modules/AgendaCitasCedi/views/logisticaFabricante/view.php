@@ -2,17 +2,15 @@
 /* @var $this AcuerdosEntregaFabricanteController */
 /* @var $model AcuerdosEntregaFabricante */
 
-$this->pageTitle = 'Visualizar ID Logística Entrega';
 
 $this->breadcrumbs=array(
 	'Logística Entrega de Mercancía'=>array('index'),
 	$model->IdLogisticaFabricante=>array('view','id'=>$model->IdLogisticaFabricante),
-	$this->pageTitle,
+	
 );
-
+//$this->menu=$this->verPermisosMenuOperaciones();
 ?>
 
-<title><?php echo Yii::app()->controller->module->getName() ." >> " . $this->pageTitle ?></title>
 
 
 <?php
@@ -23,10 +21,11 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
 
 ?>
 
-<div class="page-header">
-    <h1>Logística Entrega de Mercancía</h1>
-</div>
-
+<div class="panel panel-primary">
+    <div class="panel-heading">        
+        <h3 class="panel-title">Ver Logistica de Entrega</h3>
+    </div>
+<div class=" panel-body">
 
 <div class="logisticafabricante-view">
        
@@ -45,7 +44,7 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
     
     <?php $this->widget('bootstrap.widgets.TbDetailView', array(
         'data' => $model,
-        'htmlOptions'=>array('style'=>'word-wrap:break-word; width:600px; font-family:"Times New Roman"'),
+        'htmlOptions'=>array('style'=>'word-wrap:break-word;"'),
         'attributes' => array(            
             'IdLogisticaFabricante',
             array(
@@ -75,5 +74,7 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
     
     
     
+</div>
+</div>
 </div>
 

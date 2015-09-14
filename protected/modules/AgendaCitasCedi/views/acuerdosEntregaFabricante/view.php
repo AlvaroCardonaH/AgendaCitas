@@ -2,17 +2,14 @@
 /* @var $this AcuerdosEntregaFabricanteController */
 /* @var $model AcuerdosEntregaFabricante */
 
-$this->pageTitle = 'Visualizar ID Acuerdo Entrega';
 
 $this->breadcrumbs=array(
 	'Acuerdos de Entrega de Mercancía'=>array('index'),
 	$model->IdAcuerdoEntrega=>array('view','id'=>$model->IdAcuerdoEntrega),
-	$this->pageTitle,
+
 );
-
+//$this->menu=$this->verPermisosMenuOperaciones();
 ?>
-
-<title><?php echo Yii::app()->controller->module->getName() ." >> " . $this->pageTitle ?></title>
 
 
 <?php
@@ -23,9 +20,11 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
 
 ?>
 
-<div class="page-header">
-    <h1>Registrar Acuerdos de Entrega de Mercancía</h1>
-</div>
+<div class="panel panel-primary">
+    <div class="panel-heading">        
+        <h3 class="panel-title">Ver Acuerdo de Entrega</h3>
+    </div>
+<div class=" panel-body">
 
 
 <div class="acuerdosentrega-view">
@@ -73,4 +72,6 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
     
     
 </div>
+</div>
 
+</div>

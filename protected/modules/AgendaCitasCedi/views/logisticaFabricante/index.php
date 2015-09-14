@@ -2,15 +2,12 @@
 /* @var $this ConfiguracionEntregasProveedorCediController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->pageTitle = 'Logística Entrega de Mercancía';
 
 $this->breadcrumbs=array(
 	'Logística de Entrega de Mercancía',
 );
-
+//$this->menu=$this->verPermisosMenuOperaciones();
 ?>
-
-<title><?php echo Yii::app()->controller->module->getName() ." >> " . $this->pageTitle ?></title>
 
 <?php
 $this->widget('zii.widgets.CBreadcrumbs', array(
@@ -19,30 +16,19 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
 ));
 ?>
 
-<div class="page-header">
-    <h1>Logística Entrega de Mercancía</h1>
-</div>
+<div class="panel panel-primary">
+    <div class="panel-heading">        
+        <h3 class="panel-title">Logistica Entrega de Mercancia</h3>
+    </div>
+<div class=" panel-body">
 
-<?php echo TbHtml::linkButton('Crear Registro', array('color' => TbHtml::BUTTON_COLOR_PRIMARY,
-                                        'method' => 'post',
-                                        'submit' => array ('logisticaFabricante/create'),
-)); ?>     
 
-<br />
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
         'id'=>'configuracion-grid',
 	'dataProvider'=>$model->search(),        
 	'filter'=>$model,
-        'summaryText' => "Mostrando {start} – {end} de {count} resultados",
-        'pager'=>array(
-            'header' => 'Ir a la pagina:',
-            'firstPageLabel' => '< <',
-            'prevPageLabel' => 'Anterior',
-            'nextPageLabel' => 'Siguiente',
-            'lastPageLabel' => '>>',
-        ),    
-        'htmlOptions'=>array('style'=>'word-wrap:break-word; width:1300px; font-family:"Times New Roman"'),
+        'htmlOptions'=>array('style'=>'word-wrap:break-word; "'),
         'columns'=>array(
             array(
                 'name' => 'IdLogisticaFabricante',
@@ -91,3 +77,5 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
             ),
         ),
 )); ?>
+</div>
+</div>

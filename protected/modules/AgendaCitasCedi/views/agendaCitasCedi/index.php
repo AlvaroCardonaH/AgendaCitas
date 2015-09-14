@@ -2,13 +2,13 @@
 /* @var $this MuellesController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->pageTitle = 'Agenda / Muelle';
+
 
 $this->breadcrumbs=array(
         'Gestionar Solicitudes de Citas'=>array('solicitudCitaEntregaMercancia/index'),
 	'Ver Agenda',
 );
-
+//$this->menu=$this->verPermisosMenuOperaciones();
 ?>
 
 <?php
@@ -24,9 +24,12 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
 ));
 ?>
 
-<div class="page-header">
-    <h1><?php echo $titulo ?></h1>
-</div>
+<div class="panel panel-primary">
+    <div class="panel-heading">        
+        <h3 class="panel-title"><?php echo $titulo ?></h3>
+    </div>
+<div class=" panel-body">
+
 
 <?php $this->widget('ext.fullcalendar.EFullCalendarHeart', array(
     //'themeCssFile'=>'cupertino/jquery-ui.min.css',
@@ -38,5 +41,6 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
         ),
         'events'=>$this->createUrl("calendarEvents", array('IdMuelle'=>$IdMuelle)),
     )));
-?>
- 
+?></div>
+    
+</div>
