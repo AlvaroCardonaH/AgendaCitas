@@ -3,18 +3,10 @@
 /* @var $dataProvider CActiveDataProvider */
 
 
-$this->breadcrumbs=array(
-	'Tipos Muelles',
-);
 //$this->menu=$this->verPermisosMenuOperaciones();
 ?>
 
-<?php
-$this->widget('zii.widgets.CBreadcrumbs', array(
-    'links'=>$this->breadcrumbs,
-    'htmlOptions'=>array ('class'=>'breadcrumb'),
-));
-?>
+
 
 <div class="panel panel-primary">
     <div class="panel-heading">        
@@ -40,9 +32,9 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
                 'name' => 'ObservacionesTipoMuelle',
                 'htmlOptions'=>array('width'=>'300'),
             ),             
-            array(  // muestra una columna con los botones "view", "update" y "delete"
+            /*array(  // muestra una columna con los botones "view", "update" y "delete"
             'class'=>'CButtonColumn',
-            ),
+            ),*/
         ),
 )); ?>
 </div>

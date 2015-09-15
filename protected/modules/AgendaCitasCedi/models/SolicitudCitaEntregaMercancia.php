@@ -70,7 +70,8 @@ class SolicitudCitaEntregaMercancia extends CActiveRecord
                     'estadosolicitud' => array(self::BELONGS_TO, 'EstadosSolicitudCita', 'IdEstadoSolicitudCita'),
                     'detallesolicitudcita' => array(self::BELONGS_TO, 'SolicitudesCitaDetalle', 'IdNumeroSolicitud'),
                     'cedi' => array(self::BELONGS_TO, 'Cedi', 'IdCedi'),
-                    'fabricante' => array(self::BELONGS_TO, 'Fabricante', 'IdFabricante'),                    
+                    'fabricante' => array(self::BELONGS_TO, 'Fabricante', 'IdFabricante'),      
+					'transportador' => array(self::BELONGS_TO, 'Transportador', 'IdTransportador'),  					
 		);
 	}
 
@@ -225,7 +226,7 @@ class SolicitudCitaEntregaMercancia extends CActiveRecord
             
             
             $sql = "SELECT SUM(TotalOrdenCompra) 
-                    FROM t_solicitudescitadetalle
+                    FROM t_SolicitudesCitaDetalle
                     WHERE IdNumeroSolicitud = $IdNumeroSolicitud
                 ";
             
@@ -240,7 +241,7 @@ class SolicitudCitaEntregaMercancia extends CActiveRecord
             
             
             $sql = "SELECT SUM(NumeroPiezas) 
-                    FROM t_solicitudescitadetalle
+                    FROM t_SolicitudesCitaDetalle
                     WHERE IdNumeroSolicitud = $IdNumeroSolicitud
                 ";
             

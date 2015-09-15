@@ -3,11 +3,6 @@
 /* @var $model FechasBloqueadas */
 
 
-$this->breadcrumbs=array(
-	'Fechas Bloqueadas'=>array('index'),
-	$model->IdFechaBloqueada=>array('view','id'=>$model->IdFechaBloqueada),
-	
-);
 //$this->menu=$this->verPermisosMenuOperaciones();
 ?>
 

@@ -3,19 +3,10 @@
 /* @var $dataProvider CActiveDataProvider */
 
 
-$this->breadcrumbs=array(
-	'Tipos Fabricantes',
-);
+
 //$this->menu=$this->verPermisosMenuOperaciones();
 ?>
 
-
-<?php
-$this->widget('zii.widgets.CBreadcrumbs', array(
-    'links'=>$this->breadcrumbs,
-    'htmlOptions'=>array ('class'=>'breadcrumb'),
-));
-?>
 
 <div class="panel panel-primary">
     <div class="panel-heading">        
@@ -29,10 +20,10 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
 	'dataProvider'=>$model->search(),        
 	'filter'=>$model,   
         'columns'=>array(
-            array(
+            /*array(
                 'name' => 'IdTipoFabricante',
                 'htmlOptions'=>array('width'=>'100'),
-            ),                
+            ),*/          
             array(
                 'name' => 'NombreTipoFabricante',
                 'htmlOptions'=>array('width'=>'300'),

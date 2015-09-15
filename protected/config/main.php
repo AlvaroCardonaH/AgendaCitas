@@ -120,6 +120,7 @@ return array(
                 'tablePrefix' => '', // even empty table prefix required!!!
                 'emulatePrepare' => true,
                 'enableProfiling' => true,
+                'enableParamLogging' => true,
                 'schemaCacheID' => 'cache',
                 'queryCacheID' => 'cache',
                 'schemaCachingDuration' => 120
@@ -147,7 +148,7 @@ return array(
     'routes' => array(
         array(
             'class' => 'CFileLogRoute',
-            'levels' => 'error, warning',
+            'levels'=>'trace, info, error, warning',
         ),
         // uncomment the following to show log messages on web pages
         /*

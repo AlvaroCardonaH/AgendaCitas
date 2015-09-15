@@ -61,14 +61,14 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
                 'filter'=> CHtml::listData(Fabricante::model()->findAll(array('order'=>'Nombre')), 
                                                                         'IdFabricante', 'Nombre')
             ),
-            'IdTransportador'=>array(
+            /*'IdTransportador'=>array(
                 'name' => 'IdTransportador',
                 'header' => 'Transportador',
                 'htmlOptions'=>array('width'=>'250'),
                 'value' => function ($model){
                         return Transportador::getNombreTransportador($model->IdTransportador);
                 }
-            ),            
+            ), */           
             'IdCedi'=>array(
                 'name' => 'IdCedi',
                 'htmlOptions'=>array('width'=>'150'),

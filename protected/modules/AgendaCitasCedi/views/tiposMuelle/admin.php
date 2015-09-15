@@ -2,15 +2,7 @@
 /* @var $this TiposMuelleController */
 /* @var $model TiposMuelle */
 
-$this->breadcrumbs=array(
-	'Tipos Muelles'=>array('index'),
-	'Manage',
-);
-
-$this->menu=array(
-	array('label'=>'List TiposMuelle', 'url'=>array('index')),
-	array('label'=>'Create TiposMuelle', 'url'=>array('create')),
-);
+//$this->menu=$this->verPermisosMenuOperaciones();
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){

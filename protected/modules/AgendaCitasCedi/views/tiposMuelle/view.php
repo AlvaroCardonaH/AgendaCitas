@@ -3,22 +3,10 @@
 /* @var $model TiposMuelle */
 
 
-
-$this->breadcrumbs=array(
-	'Tipos Muelle'=>array('index'),
-	$model->IdTipoMuelle=>array('view','id'=>$model->IdTipoMuelle),
-	
-);
 //$this->menu=$this->verPermisosMenuOperaciones();
 ?>
 
 
-<?php
-$this->widget('zii.widgets.CBreadcrumbs', array(
-    'links'=>$this->breadcrumbs,
-    'htmlOptions'=>array ('class'=>'breadcrumb'),
-));
-?>
 
 <div class="panel panel-primary">
     <div class="panel-heading">        

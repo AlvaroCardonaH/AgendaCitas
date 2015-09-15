@@ -107,7 +107,7 @@ class SolicitudCitaEntregaMercanciaController extends Controller
                 //$model=$this->loadModel($id);                
             
                 $modelagenda = new AgendaCitasCedi();
-                         
+                        
                 $model= SolicitudCitaEntregaMercancia::model()->getSolicitudCita($id);
                 
                 $modelmuelles=new CActiveDataProvider(Muelles::model(), array(
@@ -122,7 +122,7 @@ class SolicitudCitaEntregaMercanciaController extends Controller
                 
                 $modelagenda->FechaSolicitudCita = $model->FechaSolicitudCita;
                 $modelagenda->HoraSolicitudCita = $model->HoraSolicitudCita;
-
+                
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -130,7 +130,7 @@ class SolicitudCitaEntregaMercanciaController extends Controller
 		{
                     $model->attributes=$_POST['SolicitudCitaEntregaMercancia'];
                     $model->IdEstadoSolicitudCita = 1;
-                        
+                    
                     if($model->save()){
                         
                         $fecha=strftime( "%Y-%m-%d-%H-%M-%S", time() );
@@ -151,7 +151,7 @@ class SolicitudCitaEntregaMercanciaController extends Controller
                         if(isset($_POST['AgendaCitasCedi'])){
                             $modelagenda->attributes=$_POST['AgendaCitasCedi'];
                             if ($modelagenda->save()){
-                                $this->redirect(array('view','id'=>$model->IdNumeroSolicitud));
+                                $this->redirect(array('index'));
                             }
                         }                                        
                     }        

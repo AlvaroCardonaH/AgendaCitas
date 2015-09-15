@@ -34,9 +34,7 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
             array(
                 'name' => 'IdCedi',
                 'htmlOptions'=>array('width'=>'150'),
-                'value'=> function($model){
-                    return Cedi::getNombreCedi($model->IdCedi);
-                },                                
+                'value'=> '$data->cedi->NombreCEDI',                     
             ),             
             array(
                 'name' => 'NombreMuelle',

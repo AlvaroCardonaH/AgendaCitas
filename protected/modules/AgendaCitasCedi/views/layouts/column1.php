@@ -18,12 +18,12 @@
                             'linkOptions' => array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown'),
                             'submenuOptions' => array('class' => 'dropdown-menu'),
                             'items' => array(
-                                array('label' => 'Conductores', 'url' => array('conductor/index'), 'visible'=>!Yii::app()->user->isGuest),
-                                array('label' => 'Motivos Bloqueo Fecha', 'url' => array('motivosBloqueoFecha/index'), 'visible'=>!Yii::app()->user->isGuest),
-                                array('label' => 'Roles', 'url' => array('roles/index'), 'visible'=>!Yii::app()->user->isGuest),
-                                array('label' => 'Tipos de Muelle', 'url' => array('tiposMuelle/index'), 'visible'=>!Yii::app()->user->isGuest),
-                                array('label' => 'Tipos de Fabricante', 'url' => array('tiposFabricante/index'), 'visible'=>!Yii::app()->user->isGuest),
-                                array('label' => 'Tipos de Entrega', 'url' => array('tiposEntrega/index'), 'visible'=>!Yii::app()->user->isGuest),
+                                //array('label' => 'Conductores', 'url' => array('conductor/index'), ),
+                                array('label' => 'Motivos Bloqueo Fecha', 'url' => array('motivosBloqueoFecha/index'), ),
+                                //array('label' => 'Roles', 'url' => array('roles/index'), ),
+                                array('label' => 'Tipos de Muelle', 'url' => array('tiposMuelle/index'), ),
+                                array('label' => 'Tipos de Fabricante', 'url' => array('tiposFabricante/index'), ),
+                                array('label' => 'Tipos de Entrega', 'url' => array('tiposEntrega/index'), ),
                                 
                                 )   
                         ),
@@ -31,24 +31,24 @@
                             'linkOptions' => array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown'),
                             'submenuOptions' => array('class' => 'dropdown-menu'),
                             'items' => array(
-                                array('label' => 'Agendar Citas', 'url' => array('tAgendacitascedi/index'), 'visible'=>!Yii::app()->user->isGuest),
+                                array('label' => 'Agendar Citas', 'url' => array('tAgendacitascedi/index'), ),
                                 array('label' => '', 'url' => array('#'), 'itemOptions' => array('class' => 'divider')),
-                                array('label' => 'Gestionar Solicitudes', 'url' => array('solicitudCitaEntregaMercancia/index'), 'visible'=>!Yii::app()->user->isGuest),
-                                array('label' => 'Logistica Entrega', 'url' => array('logisticaFabricante/index'), 'visible'=>!Yii::app()->user->isGuest),
-                                array('label' => 'Fecha Bloqueadas', 'url' => array('fechasBloqueadas/index'), 'visible'=>!Yii::app()->user->isGuest),
-                                array('label' => 'Muelles', 'url' => array('muelles/index'), 'visible'=>!Yii::app()->user->isGuest),
+                                array('label' => 'Gestionar Solicitudes', 'url' => array('solicitudCitaEntregaMercancia/index'), ),
+                                array('label' => 'Logistica Entrega', 'url' => array('logisticaFabricante/index'), ),
+                                array('label' => 'Fecha Bloqueadas', 'url' => array('fechasBloqueadas/index'), ),
+                                array('label' => 'Muelles', 'url' => array('muelles/index'), ),
                                 array('label' => '', 'url' => array('#'), 'itemOptions' => array('class' => 'divider')),
-                                array('label' => 'Usuarios', 'url' => array('user/index'), 'visible'=>!Yii::app()->user->isGuest),
+                                array('label' => 'Usuarios', 'url' => array('user/index'), ),
                             )
                         ), 
                         array('label' => 'Fabricantes', 'url' => array('#'), 'itemOptions' => array('class' => 'dropdown'),
                             'linkOptions' => array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown'),
                             'submenuOptions' => array('class' => 'dropdown-menu'),
                             'items' => array(
-                                array('label' => 'Acuerdos Entrega', 'url' => array('acuerdosEntregaFabricante/index'), 'visible'=>!Yii::app()->user->isGuest),
-                                //array('label' => 'Logistica Entrega', 'url' => array('logisticaFabricante/index'), 'visible'=>!Yii::app()->user->isGuest),
+                                array('label' => 'Acuerdos Entrega', 'url' => array('acuerdosEntregaFabricante/index'), ),
+                                //array('label' => 'Logistica Entrega', 'url' => array('logisticaFabricante/index'), ),
                                 array('label' => '', 'url' => array('#'), 'itemOptions' => array('class' => 'divider')),
-                                array('label' => 'Solicitud de Cita', 'url' => array('ordenesCompraCitasCedi/index'), 'visible'=>!Yii::app()->user->isGuest),
+                                array('label' => 'Solicitud de Cita', 'url' => array('ordenesCompraCitasCedi/index'), ),
                             )
                         ),                       
               
@@ -61,7 +61,7 @@
                     'encodeLabel' => true,
                     'items' => array(
 						array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-						array('label'=>'Salir ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
+						array('label'=>'Salir ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), ),
 						
                     ),
                     

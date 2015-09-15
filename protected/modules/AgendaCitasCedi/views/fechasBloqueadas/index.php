@@ -3,19 +3,10 @@
 /* @var $dataProvider CActiveDataProvider */
 
 
-$this->breadcrumbs=array(
-	'Fechas Bloqueadas',
-);
+
 //$this->menu=$this->verPermisosMenuOperaciones();
 ?>
 
-
-<?php
-$this->widget('zii.widgets.CBreadcrumbs', array(
-    'links'=>$this->breadcrumbs,
-    'htmlOptions'=>array ('class'=>'breadcrumb'),
-));
-?>
 
 <div class="panel panel-primary">
     <div class="panel-heading">        
@@ -41,21 +32,17 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
             'IdCedi'=>array(
                 'name' => 'IdCedi',
                 'htmlOptions'=>array('width'=>'200'),
-                'value' => function ($model){
-                        return Cedi::getNombreCedi($model->IdCedi);
-                },
+                'value' => '$data->cedi->NombreCEDI',
                 'filter'=> CHtml::listData(Cedi::model()->findAll(array('order'=>'NombreCEDI')), 
                                                                         'IDCEDI', 'NombreCEDI')
             ),            
-            'IdMuelle'=>array(
+            /*'IdMuelle'=>array(
                 'name' => 'IdMuelle',
                 'htmlOptions'=>array('width'=>'200'),
-                'value'=> function($model){
-                    return Muelles::getNombreMuelle($model->IdMuelle);
-                },                
+                'value'=> '$data->muelle->NombreMuelle',        
                 'filter'=> CHtml::listData(Muelles::model()->findAll(array('order'=>'NombreMuelle')), 
                                                                         'IdMuelle', 'NombreMuelle')
-            ),                        
+            ),         */                        
             array(
                 'name' => 'HoraInicio',
                 'htmlOptions'=>array('width'=>'150'),
@@ -76,10 +63,10 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
                 'name' => 'ObservacionesBloqueo',
                 'htmlOptions'=>array('width'=>'400'),
             ),                          
-            array(  // muestra una columna con los botones "view", "update" y "delete"
+            /*array(  // muestra una columna con los botones "view", "update" y "delete"
                 'class'=>'CButtonColumn',
                 'htmlOptions'=>array('width'=>'250'),   
-            ),
+            ),*/
         ),
 )); ?>
 </div>

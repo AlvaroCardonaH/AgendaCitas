@@ -166,9 +166,9 @@
                 
                 <div class="col-md-3">
                    
-                    <?php echo $form->labelEx($model, 'NumeroPiezas'); ?>
-                    <?php echo $form->textField($model, 'NumeroPiezas', array('class' => 'form-control', 
-                                                        'disabled'=>true,
+                   
+                    <?php echo $form->hiddenField($model, 'NumeroPiezas', array('class' => 'form-control', 
+                                                       
                                                         'style'=>'text-align: right',
                                                         'placeholder' => 'Número de Piezas')); ?>
                     <?php echo $form->error($model, 'NumeroPiezas'); ?>   
@@ -265,7 +265,7 @@
                     
                 </div>
                 
-                
+               
             </div>
             
             <br/>
