@@ -88,10 +88,11 @@
                 </div>
             <?php endforeach; ?>
         <?php endif;?>
+        <br>
         <?php echo $content; ?>
         <!-- Example row of columns -->
         <hr>
-        
+        <br>
     </div> <!-- /container -->
 <?php $this->endContent(); ?>
 <?php cs()->registerCssFile($this->getBootstrap3LayoutCssFileURL()); ?>

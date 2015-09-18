@@ -1,12 +1,12 @@
 <style type="text/css">
-.colorBox {
-        font-weight: 900;
-        font-family: "Times New Roman";
-	border:1px solid #000000;
+/*.colorBox {
+        
+       
+	border:0px solid #000000;
 	background-color:#B2D1F0;
-        font-size: x-large;
+        font-size: 20px;
         text-align: center;
-}
+}*/
 
 .boton {
     width: 120px; 
@@ -31,22 +31,23 @@
             <strong><?php echo Yii::app()->user->getFlash('SolicitudCitaEntregaMercancia'); ?>rttrt</strong>
         </div>
     <?php else: ?>
-    
+       
         <div class="page-header">
             
-            <div class="colorBox">
-                <p>Muelles Disponibles de CEDI</p>
-            </div>
-    
+            
+            <h4><p align="left">Muelles Disponibles de CEDI:</p></h4>
+            
+         </div>    
             <?php $this->widget('zii.widgets.grid.CGridView', array(
                     'id'=>'muelles-grid',
                     'dataProvider'=>$modelmuelles,
+                    'summaryText' => '',
                     'htmlOptions'=>array('style'=>'word-wrap:break-word;"'),
                     'columns'=>array(
-                        array(
+                       /* array(
                             'name' => 'IdMuelle',
                             'htmlOptions'=>array('width'=>'50'),
-                        ),                
+                        ),  */              
                         array(
                             'name' => 'NombreMuelle',
                             'htmlOptions'=>array('width'=>'250'),
@@ -81,6 +82,7 @@
                             'htmlOptions'=>array('width'=>'50'),
                         ),                          
                         array(  // muestra una columna con los botones "view", "update" y "delete"
+                            'header'=>'Disponibilidad',
                             'class'=>'CButtonColumn',
                             'htmlOptions'=>array('width'=>'80'), 
                             'template'=>'{index}',                
@@ -98,8 +100,10 @@
             );
             ?>
             
-        </div>
-
+       
+    <div class="page-header">
+        <h4><p align="left">Numero Solicitud: <?= $model->IdNumeroSolicitud; ?></p></h4>
+    </div>    
         <div class="horizontal-form" >
 
             <?php $form = $this->beginWidget('CActiveForm', array(
@@ -107,7 +111,7 @@
                 'enableClientValidation' => true,
                 //'enableAjaxValidation'=>true,
                 // 'errorMessageCssClass'=>'has-error',
-                'focus'=>array($modelagenda,'IdMuelle'),
+                //'focus'=>array($modelagenda,'IdMuelle'),
 
                 'htmlOptions' => array('class' => 'form-horizontal',
                     'role' => 'form',
@@ -131,7 +135,7 @@
                     <?php //echo $form->error($model, 'IdOrdenCompra'); ?>
                 </div> --> 
 
-                <div class="col-md-2">
+                <div class="col-md-5">
                     <?php echo $form->labelEx($model, 'NombreFabricante'); ?>
                     <?php echo $form->textField($model, 'NombreFabricante', array('class' => 'form-control', 
                                                         'disabled'=>true,
@@ -183,7 +187,7 @@
                 <div class="col-md-12">
                     <?php echo $form->labelEx($model, 'ObservacionesSolicitudCita'); ?>
                     <?php echo $form->textArea($model, 'ObservacionesSolicitudCita', 
-                            array('class' => 'form-control','rows'=>1, 'cols'=>80, 'disabled'=>true,)); ?>
+                            array('class' => 'form-control','rows'=>1, 'cols'=>60, 'disabled'=>true,)); ?>
                     <?php echo $form->error($model, 'ObservacionesSolicitudCita'); ?> 
                 </div>    
             </div>
@@ -192,13 +196,7 @@
             
             <div class='row'>    
                 
-                <div class="col-md-2">
-                    <?php echo $form->labelEx($model, 'IdNumeroSolicitud'); ?>
-                    <?php echo $form->textField($model, 'IdNumeroSolicitud', array('class' => 'form-control', 
-                                                        'disabled'=>true,
-                                                        'placeholder' => '')); ?>
-                    <?php echo $form->error($model, 'IdNumeroSolicitud'); ?>
-                </div>    
+                    
                 
                 <?php
                     $listamuelles = Muelles::getListaMuelles($model->IdCedi);
@@ -274,18 +272,17 @@
                 <div class="col-md-12">
                     <?php echo $form->labelEx($modelagenda, 'ObservacionesEvento'); ?>
                     <?php echo $form->textArea($modelagenda, 'ObservacionesEvento', 
-                            array('class' => 'form-control','rows'=>2, 'cols'=>50)); ?>
+                            array('class' => 'form-control','rows'=>1, 'cols'=>50)); ?>
                     <?php echo $form->error($modelagenda, 'ObservacionesEvento'); ?> 
                 </div>    
             </div>
                             
             <br/>
-            <div class="colorBox">
-                <p>Detalle Solicitud</p>
-            </div>
             
             
-            <?php 
+            <?php
+            
+            
             $modeldetalle = new SolicitudesCitaDetalle('search'); 
             $modeldetalle->unsetAttributes(); // clear any default values
             
@@ -293,13 +290,14 @@
             
             $this->widget('zii.widgets.grid.CGridView', array(
                     'id'=>'detalle-grid',
+                    'summaryText' => '',
                     'dataProvider'=>$modeldetalle->search($model->IdNumeroSolicitud),
-                    'htmlOptions'=>array('style'=>'word-wrap:break-word; width:1000px;"'),
+                    'htmlOptions'=>array('style'=>'word-wrap:break-word; "'),
                     'columns'=>array(
-                        array(
+                        /*array(
                             'name' => 'IdSolicitudesCitaDetalle',
                             'htmlOptions'=>array('width'=>'50'),
-                        ), 
+                        ), */
                         array(
                             'name' => 'IdOrdenCompra',
                             'htmlOptions'=>array('width'=>'50'),
@@ -321,20 +319,27 @@
                             'name' => 'FechaRegistroOrdenCompra',
                             'htmlOptions'=>array('width'=>'50'),
                         ),
-                              
+                        array(
+                            'header'=>'Dividir Orden',
+                            'value'=>'',
+                        
+                          ),    
                         
                     ),
                 )
             );
+            
             ?>
             
             <div class="row">
-                <div class='col-md-3'>     
-                    <?php echo CHtml::submitButton($model->isNewRecord ? 'Grabar' : 'Actualizar', 
-                                                array('class' => 'btn btn-primary',)); ?>
-                </div>
+                <p align ='center'>
+                    <?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Agendar Solicitud', 
+                                                array('class' => 'btn btn-primary')); ?>
+                </p>
                 
-            </div>    
+            </div>   
+                       
+            
             
             
                 

@@ -19,10 +19,10 @@
 
 
 
-
+    <br>
 <?php  echo $content; ?>
 
-
+    <br>
 
 
 </body>
