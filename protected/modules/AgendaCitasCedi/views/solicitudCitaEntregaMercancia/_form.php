@@ -320,10 +320,12 @@
                             'htmlOptions'=>array('width'=>'50'),
                         ),
                         array(
-                            'header'=>'Dividir Orden',
-                            'value'=>'',
-                        
-                          ),    
+                            'class'=>'CLinkColumn',
+                            'label'=>'Partir Orden',
+                            'htmlOptions'=>array('style'=>'width: 80px; text-align: center;'),
+                            'urlExpression'=>'Yii::app()->createUrl("AgendaCitasCedi/SolicitudCitaEntregaMercancia/partir",array("id"=>$data->IdSolicitudesCitaDetalle,"solicitud"=>$data->IdNumeroSolicitud))',
+                            'header'=>'Acciones'
+                         ),   
                         
                     ),
                 )
