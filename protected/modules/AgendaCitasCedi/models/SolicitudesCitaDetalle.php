@@ -21,6 +21,9 @@
  */
 class SolicitudesCitaDetalle extends CActiveRecord
 {
+    public $NuevoNumeroPiezas;
+    public $NumeroPiezasIniciales;
+    
 	/**
 	 * @return string the associated database table name
 	 */
@@ -37,9 +40,10 @@ class SolicitudesCitaDetalle extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('FechaGraba', 'required'),
+			array('FechaGraba, NuevoNumeroPiezas', 'required'),
 			array('IdNumeroSolicitud, IdOrdenCompra, NumeroPiezas, IdEstadoOrdenCompra', 'numerical', 'integerOnly'=>true),
 			array('TotalOrdenCompra', 'length', 'max'=>15),
+                       
 			array('Adjunto', 'length', 'max'=>255),
 			array('FechaTentativaEntrega, FechaRegistroOrdenCompra', 'safe'),
 			// The following rule is used by search().
@@ -72,6 +76,7 @@ class SolicitudesCitaDetalle extends CActiveRecord
 			'IdOrdenCompra' => 'Id Orden Compra',
 			'TotalOrdenCompra' => 'Total Orden Compra',
 			'NumeroPiezas' => 'Numero Piezas',
+                        'NuevoNumeroPiezas' => 'Numero Piezas',
 			'FechaGraba' => 'Fecha Graba',
 			'Adjunto' => 'Adjunto',
 			'IdEstadoOrdenCompra' => 'Id Estado Orden Compra',
@@ -100,6 +105,28 @@ class SolicitudesCitaDetalle extends CActiveRecord
 
 		$criteria->compare('IdSolicitudesCitaDetalle',$this->IdSolicitudesCitaDetalle);
 		$criteria->compare('IdNumeroSolicitud',$this->IdNumeroSolicitud = $IdNumeroSolicitud);
+		$criteria->compare('IdOrdenCompra',$this->IdOrdenCompra);
+		$criteria->compare('TotalOrdenCompra',$this->TotalOrdenCompra,true);
+		$criteria->compare('NumeroPiezas',$this->NumeroPiezas);
+		$criteria->compare('FechaGraba',$this->FechaGraba,true);
+		$criteria->compare('Adjunto',$this->Adjunto,true);
+		$criteria->compare('IdEstadoOrdenCompra',$this->IdEstadoOrdenCompra);
+		$criteria->compare('FechaTentativaEntrega',$this->FechaTentativaEntrega,true);
+		$criteria->compare('FechaRegistroOrdenCompra',$this->FechaRegistroOrdenCompra,true);
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+        
+        public function partir($id)
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('IdSolicitudesCitaDetalle',$this->IdSolicitudesCitaDetalle = $id);
+		$criteria->compare('IdNumeroSolicitud',$this->IdNumeroSolicitud);
 		$criteria->compare('IdOrdenCompra',$this->IdOrdenCompra);
 		$criteria->compare('TotalOrdenCompra',$this->TotalOrdenCompra,true);
 		$criteria->compare('NumeroPiezas',$this->NumeroPiezas);

@@ -106,8 +106,8 @@ class SolicitudCitaEntregaMercanciaController extends Controller
             //if (Yii::app()->user->checkAccess('AgendaCitasCedi_SolicitudCitaEntregaMercancia_Modificar')) {
                 //$model=$this->loadModel($id);                
             
-                $modelagenda = new AgendaCitasCedi();
-                        
+            $modelagenda = new AgendaCitasCedi();
+                         
                 $model= SolicitudCitaEntregaMercancia::model()->getSolicitudCita($id);
                 
                 $modelmuelles=new CActiveDataProvider(Muelles::model(), array(
@@ -122,7 +122,7 @@ class SolicitudCitaEntregaMercanciaController extends Controller
                 
                 $modelagenda->FechaSolicitudCita = $model->FechaSolicitudCita;
                 $modelagenda->HoraSolicitudCita = $model->HoraSolicitudCita;
-                
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -130,7 +130,7 @@ class SolicitudCitaEntregaMercanciaController extends Controller
 		{
                     $model->attributes=$_POST['SolicitudCitaEntregaMercancia'];
                     $model->IdEstadoSolicitudCita = 1;
-                    
+                        
                     if($model->save()){
                         
                         $fecha=strftime( "%Y-%m-%d-%H-%M-%S", time() );
@@ -151,7 +151,7 @@ class SolicitudCitaEntregaMercanciaController extends Controller
                         if(isset($_POST['AgendaCitasCedi'])){
                             $modelagenda->attributes=$_POST['AgendaCitasCedi'];
                             if ($modelagenda->save()){
-                                $this->redirect(array('index'));
+                                $this->redirect(array('view','id'=>$model->IdNumeroSolicitud));
                             }
                         }                                        
                     }        
@@ -162,7 +162,7 @@ class SolicitudCitaEntregaMercanciaController extends Controller
                     'modelagenda'=>$modelagenda,
                     'modelmuelles'=>$modelmuelles,
                    // 'modeldetalle'=>$modeldetalle,
-		));
+		));    
             /*} else {
                     $this->render('//site/error', array(
                     'code' => '101',
@@ -238,6 +238,65 @@ class SolicitudCitaEntregaMercanciaController extends Controller
                         'message' => Yii::app()->params ['accessError']
                         ));
                 }*/
+		
+	}
+        
+        public function actionPartir($id,$solicitud)
+	{
+                //if (Yii::app()->user->checkAccess('AgendaCitasCedi_SolicitudCitaEntregaMercancia_Crear')) {
+                //$model = new SolicitudCitaEntregaMercancia('search');
+                              
+                
+                //$model=$this->loadModel($id);
+                $modelsolicitud = SolicitudCitaEntregaMercancia:: model()->findByPk($solicitud);
+                $modeldetalle = SolicitudesCitaDetalle:: model()->findByPk($id);
+                $modelagenda = new AgendaCitasCedi();
+                
+                if(isset($_POST['SolicitudCitaEntregaMercancia'],$_POST['SolicitudesCitaDetalle'],$_POST['AgendaCitasCedi']))
+		{
+                    $modelsolicitud->attributes=$_POST['SolicitudCitaEntregaMercancia'];
+                    $modeldetalle->attributes=$_POST['SolicitudesCitaDetalle'];
+                    
+                    $NuevaFechaSolicitudCita = $modelsolicitud->NuevaFechaSolicitudCita;
+                    $NuevaHoraSolicitudCita = $modelsolicitud->NuevaHoraSolicitudCita;
+                    $FechaSolicitudCita = $modelsolicitud->FechaSolicitudCita;                    
+                    $HoraSolicitudCita = $modelsolicitud->HoraSolicitudCita;
+                    
+                    $NumeroPiezas = $modeldetalle->NumeroPiezas - $modeldetalle->NuevoNumeroPiezas;
+                    $NuevoNumeroPiezas = $modeldetalle->NuevoNumeroPiezas;
+                    
+                    $SQL1 = "INSERT INTO t_SolicitudesCita 
+                            (FechaSolicitudCita, HoraSolicitudCita, IdCedi, IdFabricante, IdUser, IdTransportador, IdConductor, ObservacionesSolicitudCita, IdEstadoSolicitudCita, NumeroPiezas, TotalOrdenCompra, TipoSolicitud, OrdenPartida)
+                            SELECT '$NuevaFechaSolicitudCita', '$NuevaHoraSolicitudCita', IdCedi, IdFabricante, IdUser, IdTransportador, IdConductor, ObservacionesSolicitudCita, '1', '$NuevoNumeroPiezas', TotalOrdenCompra, TipoSolicitud, 'S'
+                            FROM t_SolicitudesCita
+                            WHERE IdNumeroSolicitud = $solicitud;"
+                            . "UPDATE t_SolicitudesCita
+                            SET FechaSolicitudCita = '$FechaSolicitudCita', HoraSolicitudCita = '$HoraSolicitudCita', IdEstadoSolicitudCita = '1', NumeroPiezas = '$NumeroPiezas', OrdenPartida = 'S'
+                            WHERE IdNumeroSolicitud = $solicitud;"
+                            . "INSERT INTO t_SolicitudesCitaDetalle
+                            (IdNumeroSolicitud, IdOrdenCompra, TotalOrdenCompra, NumeroPiezas, FechaTentativaEntrega, FechaRegistroOrdenCompra, IdOrdenCompraPartida)
+                            SELECT (select AUTO_INCREMENT - 1 from information_schema.TABLES where TABLE_NAME='t_SolicitudesCita'), '0', TotalOrdenCompra, '$NuevoNumeroPiezas', FechaTentativaEntrega, FechaRegistroOrdenCompra, IdOrdenCompra
+                            FROM t_SolicitudesCitaDetalle
+                            WHERE IdSolicitudesCitaDetalle = $id;"
+                            . "UPDATE t_SolicitudesCitaDetalle
+                            SET NumeroPiezas = '$NumeroPiezas'
+                            WHERE IdSolicitudesCitaDetalle = $id";
+                    Yii::app()->db->createCommand($SQL1)->execute();
+                    
+                }
+
+		$this->render('partir',array(
+                        'modelsolicitud'=>$modelsolicitud,
+			'modeldetalle'=>$modeldetalle,
+                        'modelagenda'=>$modelagenda,
+                        
+		));    
+                /*} else {
+                    $this->render('//site/error', array(
+                    'code' => '101',
+                    'message' => Yii::app()->params ['accessError']
+                    ));
+            }*/
 		
 	}
 

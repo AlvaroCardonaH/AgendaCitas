@@ -105,7 +105,6 @@ $this->widget('zii.widgets.CBreadcrumbs', array(
             'FechaSolicitudCita',                    
             array(        
                 'name' => 'HoraSolicitudCita',
-                'header' => 'Hora',
                 'htmlOptions'=>array('width'=>'60'),  
             ),                       
             'IdEstadoSolicitudCita'=>array(

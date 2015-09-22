@@ -25,6 +25,7 @@ class AgendaCitasCedi extends CActiveRecord
     
          public $FechaSolicitudCita;
          public $HoraSolicitudCita;
+         public $NuevoIdMuelle;
     
 	public static function model($className=__CLASS__)
 	{
@@ -76,7 +77,7 @@ class AgendaCitasCedi extends CActiveRecord
 	{
 		return array(
 			'IdEventoAgenda' => 'Id Evento Agenda',
-			'IdMuelle' => 'Id Muelle',
+			'IdMuelle' => 'Muelle',
 			'TituloEvento' => 'Titulo Evento',
 			'FechaInicio' => 'Fecha Inicio',
 			'FechaFinal' => 'Fecha Final',
@@ -85,8 +86,8 @@ class AgendaCitasCedi extends CActiveRecord
 			'FechaGraba' => 'Fecha Graba',
 			'IdUsuarioModifica' => 'Id Usuario Modifica',
 			'FechaModifica' => 'Fecha Modifica',
-                        'FechaSolicitudCita'=>'Fecha Solicitud',
-                        'HoraSolicitudCita'=>'Hora Solicitud',
+                        'FechaSolicitudCita'=>'Fecha Atencion',
+                        'HoraSolicitudCita'=>'Hora Atencion',
 		);
 	}
 

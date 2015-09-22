@@ -30,6 +30,8 @@ class SolicitudCitaEntregaMercancia extends CActiveRecord
         public $NombreFabricante;
         public $NombreCEDI;
         public $TotalOrdenCompra;
+        public $NuevaFechaSolicitudCita;
+        public $NuevaHoraSolicitudCita;
        // public $NumeroPiezasFormat;
         public $IdMuelle;
         
@@ -46,7 +48,7 @@ class SolicitudCitaEntregaMercancia extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('IdFabricante, IdCedi,  FechaSolicitudCita, HoraSolicitudCita', 'required'),
+			array('IdFabricante, IdCedi,  FechaSolicitudCita, HoraSolicitudCita, NuevaFechaSolicitudCita, NuevaHoraSolicitudCita', 'required'),
 			array('IdTransportador, IdFabricante, IdCedi,   IdEstadoSolicitudCita, IdConductor', 'numerical', 'integerOnly'=>true),
 			array('HoraSolicitudCita', 'length', 'max'=>10),
 			//array('TotalOrdenCompra', 'length', 'max'=>15),
@@ -91,8 +93,8 @@ class SolicitudCitaEntregaMercancia extends CActiveRecord
                         //'NumeroPiezasFormat' => 'Número Piezas',
 			//'FechaRegistroOrdenCompra' => 'Fecha Registro Orden Compra',
 			//'FechaTentativaEntrega' => 'Fecha Tentativa Entrega',
-			'FechaSolicitudCita' => 'Fecha Solicitud',
-			'HoraSolicitudCita' => 'Hora Solicitud',
+			'FechaSolicitudCita' => 'Fecha Atencion',
+			'HoraSolicitudCita' => 'Hora Atencion',
 			//'NumeroPiezas' => 'Numero Piezas',
 			//'TotalOrdenCompra' => 'Total Orden Compra',
 			'ObservacionesSolicitudCita' => 'Observaciones',
